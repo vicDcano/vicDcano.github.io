@@ -1,39 +1,19 @@
-.topHeader
+
+.header
 {
-    height: 55px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-
-    z-index: 100;
-
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-bottom-color: rgb(228,228,228);
+    width: 105%;
+    max-width: 1920px;
+    min-width: 480px;
+    height: 240px;
+    margin-left: -8px;
+    overflow: hidden;
 }
 
-.imageHeader
+.innerHeader
 {
     width: 100%;
-    height: 450%;
-    overflow: auto;
-}
-
-.boxOne
-{
-    position: absolute;
-    width: 470px;
-    height: 250px;
-
-    display: block;
-    margin-top: 75px;
-    margin-left: 35%;
-
-    background: aliceblue;
-
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

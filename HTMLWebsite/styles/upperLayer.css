@@ -1,57 +1,78 @@
-.boxTwo
+.boxOne
 {
     position: absolute;
-    width: 470px;
-    height: 250px;
-
-
+    width: 350px;
+    height: 35%;
     display: block;
-    margin-top: 88px;
-    margin-left: 36%;
+    top: 25%;
+    margin: center;
 
     background: rgb(80, 253, 123);
 }
 
+.boxTwo
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    top: 4%;
+    left: 4%;
+
+    background: aliceblue;
+}
+
 .selImage
 {
+    margin-top: -14%;
+    margin-left: 35%;
+
     image-resolution: 300dpi;
     object-fit: cover;
     object-position: 50% 20%;
     border-radius: 75%;
-    width: 25%;
-    height: 50%;
-
-    margin-top: -8%;
-    margin-left: 40%;
-    margin-bottom: 5%;
+    width: 85px;
+    min-width: none;
+    max-width: none;
+    height: 100px;
+    max-height: none;
+    min-height: none;
 }
 
 .bio
 {
-    font-size: 23px;
+    font-size: 115%;
+    text-wrap:wrap;
     text-align: center;
 }
 
 .gradient-text
 {
-    font-size: 3rem;
+    font-size: 210%;
+    text-wrap:wrap;
     font-weight: bold;
-    background: linear-gradient(to right, #e251ff, #2b4bff);
+    background: linear-gradient(to right, #B00B69, #420A55, #042069);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-top: -20px;
-    margin-left: 50px;
+    margin-top: 1%;
+    margin-left: 17%;
+    margin-bottom: 5%;
 }
 
 .arrow-body
 {
     position: absolute;
+
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: -1;
-    margin-top: 420px;
-    margin-left: 620px;
+    
     rotate: -90deg;
 }
 
@@ -79,7 +100,7 @@
 }
 .arrow:nth-child(3)
 {
-    right: 25px
+    right: 25px;
 }
 
 @keyframes arrow-load
