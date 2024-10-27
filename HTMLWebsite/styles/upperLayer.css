@@ -52,7 +52,7 @@
     font-size: 210%;
     text-wrap:wrap;
     font-weight: bold;
-    background: linear-gradient(to right, #B00B69, #420A55, #042069);
+    background: linear-gradient(to right, #ec2c99, #771199, #0e3eb8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 1%;
@@ -63,14 +63,14 @@
 .arrow-body
 {
     position: absolute;
-
-    top: 80%;
-    left: 50%;
+    top: 95%;
+    left: 25%;
     transform: translateX(-50%);
-
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 7px;
+
     z-index: -1;
     
     rotate: -90deg;
@@ -78,13 +78,11 @@
 
 .arrow
 {
-    position: absolute;
     width: 35px;
     height: 35px;
-    margin-top: 300px;
-    border-top: 12px solid #fff;
-    border-left: 12px solid #fff;
-    transform: rotate(-45deg);
+    border-top: 12px solid #ee0a0a;
+    border-left: 12px solid #b60606;
+    transform: rotate(-90deg);
     animation: arrow-load 3.5s infinite;
 }
 
