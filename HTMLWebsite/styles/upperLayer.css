@@ -120,3 +120,11 @@
         transform:rotate(-45deg) translate(-60px,-60px);
     }
 }
+
+.buttonArrow
+{
+    height: 62px;
+    width: 55px;
+    z-index: -3;
+    color: aqua;
+}

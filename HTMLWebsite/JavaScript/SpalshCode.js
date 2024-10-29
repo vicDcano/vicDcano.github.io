@@ -1,13 +1,14 @@
 const splash = document.querySelector('.splash');
 
-document.addEventListener('DOMContentLoaded', replace(e)->{
-        setTimeout(()->
+document.addEventListener('DOMContentLoaded', (e)=>
+    {
+        setTimeout(()=>
         {
             splash.classList.add('display-none')
         }, 2000)
     })
 
-    const header = document.querySelector('.header');
+const header = document.querySelector('.header');
 
 window.onscroll = function()
 {
