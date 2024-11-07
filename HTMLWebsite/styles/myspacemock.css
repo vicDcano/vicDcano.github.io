@@ -1,0 +1,12 @@
+.boxOne
+{
+    position: absolute;
+    width: 75%;
+    height: 65%;
+    display: block;
+    top: 90px;
+    left: 90px;
+    margin: center;
+
+    background: rgb(39, 207, 81);
+}

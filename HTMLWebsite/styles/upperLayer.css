@@ -60,71 +60,74 @@
     margin-bottom: 5%;
 }
 
-.arrow-body
+.arrow 
 {
+    width: 38px;
+    height: 14px;
+    margin: auto;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
     position: absolute;
-    top: 95%;
-    left: 25%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 7px;
-
-    z-index: -1;
-    
-    rotate: -90deg;
-}
-
-.arrow
-{
-    width: 35px;
-    height: 35px;
-    border-top: 12px solid #ee0a0a;
-    border-left: 12px solid #b60606;
-    transform: rotate(-90deg);
-    animation: arrow-load 3.5s infinite;
-}
-
-.arrow:nth-child(1)
-{
-    left: 25px;
-    animation-delay: -0.4s;
-}
-
-.arrow:nth-child(2)
-{
-    animation-delay: -0.2s;
-}
-.arrow:nth-child(3)
-{
-    right: 25px;
-}
-
-@keyframes arrow-load
-{
-    0%
+    top: 215px;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    opacity: 0.75;
+    transition: opacity 1s ease;
+    animation: bouncey 1.6s linear infinite;
+    /* border: 1px solid gold; */
+  }
+  
+  .arrow ul 
+  {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+  }
+  
+  .arrow ul li 
+  {
+    width: 24px;
+    height: 4px;
+    background:rgb(80, 253, 123);
+    position: absolute;
+  }
+  
+  .arrow ul li:nth-child(1) 
+  {
+    left: 0;
+    top: 0;
+    transform: rotate(45deg);
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .arrow ul li:nth-child(2) 
+  {
+    left: 14px;
+    top: 0;
+    transform: rotate(-45deg);
+    border-radius: 0 5px 5px 0;
+  }
+  
+  .arrow:hover 
+  {
+    opacity: 1;
+  }
+  
+  @keyframes bouncey 
+  {
+    0% 
     {
-        opacity: 0;
-        transform: rotate(-45deg) translate(60px,60px);
+      transform: translateY(0);
     }
-
-    0%
+    50% 
     {
-        opacity: 1;
+      transform: translateY(7px);
     }
-
-    100%
+    100% 
     {
-        opacity: 0;
-        transform:rotate(-45deg) translate(-60px,-60px);
+      transform: translateY(0);
     }
-}
-
-.buttonArrow
-{
-    height: 62px;
-    width: 55px;
-    z-index: -3;
-    color: aqua;
-}
+  }
