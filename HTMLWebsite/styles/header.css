@@ -1,15 +1,24 @@
 
 .header
 {
+    display: block;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 105%;
+    width: 100%;
     max-width: 1920px;
-   /* min-width: 480px;*/
+    min-width: 480px;
     height: 240px;
-    margin-left: -8px;
+    margin-left: -8px; /* Consider removing this unless needed */
     overflow: hidden;
+}
+
+@media (max-width: 768px) 
+{
+    .header 
+    {
+        height: 180px; /* Adjust height for smaller screens */
+    }
 }
 
 .innerHeader

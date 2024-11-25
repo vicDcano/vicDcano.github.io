@@ -40,159 +40,216 @@
     min-height: none;
 }
 
+.pointyFinger 
+{
+  position: absolute; /* Positioned relative to the dropdown menu */
+  width: 24px;
+  height: 24px;
+  opacity: 0; /* Initially hidden */
+  transition: top 0.2s ease, left 0.2s ease, opacity 0.2s ease; /* Smooth animations */
+  pointer-events: none; /* Prevent interference with mouse events */
+  z-index: 10; /* Ensure it stays above links */
+}
+
+.pointyFinger.bounce 
+{
+  animation: bounce 0.6s ease-in-out infinite; /* Add bounce animation */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+}
+
+
 .bio
 {
-    font-size: 115%;
-    text-wrap:wrap;
-    text-align: center;
+  font-size: 115%;
+  text-wrap:wrap;
+  text-align: center;
 }
 
 .gradient-text
 {
-    font-size: 210%;
-    text-wrap:wrap;
-    font-weight: bold;
-    background: linear-gradient(to right, #ec2c99, #771199, #0e3eb8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-top: 1%;
-    margin-left: 17%;
-    margin-bottom: 5%;
+  font-size: 210%;
+  text-wrap:wrap;
+  font-weight: bold;
+  background: linear-gradient(to right, #ec2c99, #771199, #0e3eb8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 1%;
+  margin-left: 17%;
+  margin-bottom: 5%;
 }
 
 .arrow 
 {
-    width: 38px;
-    height: 14px;
-    margin: auto;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-align: center;
-    position: absolute;
-    top: 75px;
-    left: 0;
-    right: 0;
-    bottom: 20px;
-    opacity: 0.75;
-    transition: opacity 1s ease;
-    animation: bouncey 1.6s linear infinite;
-    /* border: 1px solid gold; */
-  }
+  width: 38px;
+  height: 14px;
+  margin: auto;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  position: absolute;
+  top: 75px;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  opacity: 0.75;
+  transition: opacity 1s ease;
+  animation: bouncey 1.6s linear infinite;
+  /* border: 1px solid gold; */
+}
   
-  .arrow ul 
-  {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: relative;
-  }
+.arrow ul 
+{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
   
-  .arrow ul li 
-  {
-    width: 24px;
-    height: 4px;
-    background:rgb(80, 253, 123);
-    position: absolute;
-  }
+.arrow ul li 
+{
+  width: 24px;
+  height: 4px;
+  background:rgb(80, 253, 123);
+  position: absolute;
+}
   
-  .arrow ul li:nth-child(1) 
-  {
-    left: 0;
-    top: 0;
-    transform: rotate(45deg);
-    border-radius: 5px 0 0 5px;
-  }
+.arrow ul li:nth-child(1) 
+{
+  left: 0;
+  top: 0;
+  transform: rotate(45deg);
+  border-radius: 5px 0 0 5px;
+}
   
-  .arrow ul li:nth-child(2) 
-  {
-    left: 14px;
-    top: 0;
-    transform: rotate(-45deg);
-    border-radius: 0 5px 5px 0;
-  }
+.arrow ul li:nth-child(2) 
+{
+  left: 14px;
+  top: 0;
+  transform: rotate(-45deg);
+  border-radius: 0 5px 5px 0;
+}
   
-  .arrow:hover 
-  {
-    opacity: 1;
-  }
+.arrow:hover 
+{
+  opacity: 1;
+}
   
-  @keyframes bouncey 
+@keyframes bouncey 
+{
+  0% 
   {
-    0% 
-    {
-      transform: translateY(0);
-    }
-    50% 
-    {
-      transform: translateY(7px);
-    }
-    100% 
-    {
-      transform: translateY(0);
-    }
-  }
-
-  .arrow ul.flipped li:nth-child(1) 
-  {
-    transform: rotate(-45deg);
-    top: 105px;
-  }
-
-  .arrow ul.flipped li:nth-child(2) 
-  {
-    transform: rotate(45deg);
-    top: 105px;
-  }
-
-  .dropdown > .link:focus, .link:hover
-  {
-    color: black;
-  }
-
-  .dropdown
-  {
-    position: relative;
-  }
-
-  .dropdown-menu 
-  {
-    width:120px;
-    height: 95px;
-    display: none; /* Hides the menu initially */
-    position: absolute;
-    left: 100px;
-    top: calc(100% + 1.85rem);
-    background-color: rgb(80, 253, 123);
-    padding: .75rem;
-    border-radius: .75rem;
-    box-shadow: 0 2px 5px 0 rgba(255, 255, 255, .1);
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-  }
-
-  .dropdown.active .dropdown-menu 
-  {
-    display: block; /* Shows the menu */
-    opacity: 1;
     transform: translateY(0);
-    pointer-events: auto;
-    z-index: -3;
   }
-
-  .information-grid
+  50% 
   {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 2rem;
+    transform: translateY(7px);
   }
-
-  .dropdown-links
+  100% 
   {
+    transform: translateY(0);
+  }
+}
+
+.arrow ul.flipped li:nth-child(1) 
+{
+  transform: rotate(-45deg);
+  top: 185px;
+}
+
+.arrow ul.flipped li:nth-child(2) 
+{
+  transform: rotate(45deg);
+  top: 185px;
+}
+
+.dropdown > .link:focus, .link:hover
+{
+  color: black;
+}
+
+.dropdown
+{
+  position: relative;
+}
+
+.dropdown-menu 
+{
+  width: 225px;
+  height: 188px;
+  display: none; /* Hides the menu initially */
+  position: absolute;
+  left: 55px;
+  top: calc(100% + 1.75rem);
+  background-color: rgb(80, 253, 123);
+  padding: .75rem;
+  border-radius: .75rem;
+  box-shadow: 0 2px 5px 0 rgba(255, 255, 255, .1);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.dropdown.active .dropdown-menu 
+{
+  display: block; /* Shows the menu */
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+   z-index: -3;
+}
+
+.information-grid
+{
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 2rem;
+}
+
+/*   .dropdown-links
+  {
+    margin-top: .45rem;
     display: flex;
     flex-direction: column;
     gap: .50rem;
-    font-size: 23px;
+    font-size: 25px;
     text-align: center;
-  }
+  } */
+
+.dropdown-links 
+{
+  margin-top: .55rem;
+  display: flex; /* Use flexbox to organize links */
+  flex-direction: column; /* Arrange links in a column */
+  align-items: flex-start; /* Align links to the left */
+  gap: 0.5rem; /* Add spacing between links */
+}
+
+.dropdown-links .link 
+{
+  position: relative; /* Required for pointer positioning */
+  font-size: 1.5rem; /* Bigger text size */
+  color: black; /* Text color */
+  text-decoration: none; /* Remove underline */
+  padding-left: 2rem; /* Add space for pointer */
+  transition: color 0.2s ease; /* Smooth hover effect */
+}
+
+.dropdown-links .link:hover 
+{
+  background-color: rgb(100, 253, 123); /* Change background color on hover */
+}
+
+.dropdown-links .link:hover::before 
+{
+  opacity: 1; /* Show the image on hover */
+  transform: translateY(-50%) scale(1.1); /* Slight zoom effect */
+}
