@@ -6,8 +6,6 @@
     display: block;
     top: 25%;
     margin: center;
-
-    background: rgb(80, 253, 123);
 }
 
 .boxTwo
@@ -19,8 +17,108 @@
     display: block;
     top: 4%;
     left: 4%;
+}
 
-    background: aliceblue;
+label
+{
+  left: -200px;
+  width: 35px;
+  height: 90px;
+  position: relative;
+  display: block;
+  background: #ebebeb;
+  border-radius: 200px;
+  box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+label::after
+{
+  content: "";
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  top: 1.2px;
+  left: 0.85px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 90px;
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+  transition: 0.2s;
+}
+
+label svg
+{
+  position: absolute;
+  height: 30px; /* Changes the height between them*/
+  width: 30px; /* Changes the image size*/
+  left: 1.85px;
+  z-index: 5;
+}
+
+label svg.sun
+{
+  top: 1.5px;
+  fill:#fff;
+  transition: 0.3s;
+}
+
+label svg.moon
+{
+  bottom: 0.5px;
+  fill: #7e7e7e;
+  transition: 0.3s;
+}
+
+input:checked + label svg.sun
+{
+  fill: #7e7e7e
+}
+
+input:checked + label svg.moon
+{
+  fill: #fff
+}
+
+input
+{
+  width: 0;
+  height: 0;
+  visibility: 0;
+  position: absolute;
+}
+
+input:checked + label
+{
+  background: #242424;
+}
+
+input:checked + label::after
+{
+  top: 88px;
+  transform: translateY(-100%);
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+
+label:active::after
+{
+  height: 45px;
+
+}
+
+.background
+{
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  z-index: -1;
+  position: absolute;
+  transition: 0.3s;
+}
+
+input:checked + label + .background
+{
+  background: #242424;
 }
 
 .selImage
@@ -43,12 +141,14 @@
 .pointyFinger 
 {
   position: absolute; /* Positioned relative to the dropdown menu */
+  /*border-radius: 2px;*/
   width: 24px;
   height: 24px;
   opacity: 0; /* Initially hidden */
   transition: top 0.2s ease, left 0.2s ease, opacity 0.2s ease; /* Smooth animations */
   pointer-events: none; /* Prevent interference with mouse events */
   z-index: 10; /* Ensure it stays above links */
+  /*box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.082);*/
 }
 
 .pointyFinger.bounce 
@@ -214,16 +314,6 @@
   gap: 2rem;
 }
 
-/*   .dropdown-links
-  {
-    margin-top: .45rem;
-    display: flex;
-    flex-direction: column;
-    gap: .50rem;
-    font-size: 25px;
-    text-align: center;
-  } */
-
 .dropdown-links 
 {
   margin-top: .55rem;
@@ -252,4 +342,160 @@
 {
   opacity: 1; /* Show the image on hover */
   transform: translateY(-50%) scale(1.1); /* Slight zoom effect */
+}
+
+.contact-box 
+{
+  position: absolute;
+  top: 8px; /* Adjust as necessary */
+  left: 50%;
+  transform: translateX(-50%);
+  height: 310px;
+  width: 500px;
+  padding: 20px;
+  background-color: rgb(243, 192, 98);
+  border: 2px solid black;
+  z-index: 1000;
+  opacity: 0;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column; /* Ensure children are stacked */
+  gap: 20px; /* Space between items */
+}
+
+.contact-box.hidden 
+{
+  display: none; /* Completely hide the box */
+}
+
+.contact-box.active 
+{
+  transform: translateX(-50%) translateY(0); /* Slide into view */
+  opacity: 1;
+  display: block; /* Ensure it's visible */
+}
+
+.close-button 
+{
+  position: absolute;
+  top: 1px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  background: none;
+  border: none;
+  font-size: 55px; /* Adjust size as needed */
+  font-weight: bold;
+  cursor: pointer;
+  color: black; /* Change to white if in dark mode */
+}
+
+.close-button:hover 
+{
+  color: red; /* Optional hover effect */
+}
+
+
+.contact-box.hidden 
+{
+  display: none;
+}
+
+.contact-box.active 
+{
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  display: block;
+}
+
+.close-button 
+{
+  position: absolute;
+  top: 1px;
+  right: 7%;
+  background: none;
+  border: none;
+  font-size: 55px;
+  font-weight: bold;
+  cursor: pointer;
+  color: black;
+}
+
+/* Form Container */
+.contact-form 
+{
+  display: flex;               /* Flexbox layout */
+  flex-direction: column;      /* Stack items vertically */
+  gap: 65px;                   /* Space between input fields */
+  padding: 30px;               /* Inner spacing */
+  border-radius: 10px;         /* Rounded corners */
+  margin: 0 auto;              /* Center the form horizontally */
+  box-sizing: border-box;      /* Prevent layout breaking */
+}
+
+/* Form Group - Each field wrapper */
+.form-group 
+{
+  margin-top: -30px;
+  width: 100%;                 /* Ensure each group takes full width */
+}
+
+/* Input Fields and Textarea */
+.form-input 
+{
+  width: 70%;                 /* Full width inside container */
+  padding: 12px;               /* Padding for text input */
+  border: none;                /* Remove border */
+  border-radius: 15px;          /* Rounded corners */
+  font-size: 16px;             /* Readable font size */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+  box-sizing: border-box;      /* Prevent overflow issues */
+}
+
+/* Textarea Specific */
+textarea.form-input 
+{
+  height: 120px;               /* Taller for message input */
+  width: 95%;
+  resize: none;                /* Disable manual resizing */
+  margin-bottom: -12%;
+}
+
+/* Submit Button */
+.form-button 
+{
+  color: white;                /* White text */
+  border: none;
+  padding: 12px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 28px;
+  background: linear-gradient(270deg, #771199, #ec2c99);
+  transition: background-color 0.3s ease;
+  width: 25%;
+}
+
+.form-button:hover 
+{
+  background-color: #6fff74;      /* Slightly lighter hover effect */
+}
+
+/* Title Styling */
+.form-title 
+{
+  margin-top: -30px;                   /* Remove default margins */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+@media(max-width: 500px)
+{
+  .contact-box
+  {
+    width: 100%;
+  }
+
+  textarea.form-input
+  {
+    margin-bottom: -17%;
+  }
 }

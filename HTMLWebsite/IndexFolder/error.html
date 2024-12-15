@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>ERROR NOT FOUND</title>
+
+        <meta charset = "utf-8" />
+        <meta name="viewport" content="initial-scale=1">
+
+        <style>
+
+            *
+            {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html, body
+            {
+                width:100%;
+                height: 100%;
+            }
+
+            .page
+            {
+                height: 100vh;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .hiddenContainer
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+            }
+
+            .errorImage
+            {
+                width:50%;
+                max-width: 300px;
+                height: auto;
+            }
+
+            .textError
+            {
+                font-size: 5vw; /* Scales with viewport width */
+                color: rgb(185, 0, 0);
+                margin-top: 10px;
+            }
+
+            .link
+            {
+                margin-top: 25px;
+                font-size: 1.5rem; /* Bigger text size */
+                color: black; /* Text color */
+                position: relative; /* Parent for absolute positioning */
+                display: inline-block; /* Ensures proper alignment */
+            }
+
+            .pointyFinger 
+            {
+                position: absolute; /* Positioned relative to the link */
+                top: 10%; /* Align vertically with the text */
+                left: -35px; /* Position it to the left of the link */
+                transform: translateY(-50%); /* Center-align vertically */
+                width: 24px;
+                height: 24px;
+                transition: opacity 0.2s ease, transform 0.2s ease; /* Smooth animations */
+            }
+
+            .pointyFinger.bounce 
+            {
+                animation: bounce 0.6s ease-in-out infinite;
+            }
+
+            @keyframes bounce 
+            {
+                0%, 100% 
+                {
+                    transform: translateX(0);
+                }
+                50% 
+                {
+                    transform: translateX(-50%);
+                }
+            }
+
+            @media(max-width:600px)
+            {
+                .errorImage 
+                {
+                    width: 70%; /* Further scale down on small screens */
+                    max-width: none;
+                }
+
+                .textError 
+                {
+                    font-size: 4vw; /* Adjust text size for smaller screens */
+                }
+            }
+
+        </style>
+        
+        </head>
+
+        <body>
+           <div class = "page">
+            <div class = "hiddenContainer">
+                <img class = "errorImage" src="/HTMLWebsite/imageFiles/sadcaterror.jpg">
+                <p class="textError">404</p>
+                <p class="textError">OH NO!</p>
+                <p class="textError">Page not found, please do go back!!</p>
+                <a href="home.html" class="link">
+                    <img class = "pointyFinger" src="/HTMLWebsite/imageFiles/pointer.png">
+                    Go back NOW!
+                </a>
+               </div>
+           </div>
+
+           <script >
+            // Add bounce animation to the pointing finger when the page loads
+            window.addEventListener('load', () => {
+            const pointer = document.querySelector('.pointyFinger');
+            if (pointer) 
+            {
+                pointer.classList.add('bounce');
+            }
+            });
+        </script>
+
+        </body>
+    </html>
