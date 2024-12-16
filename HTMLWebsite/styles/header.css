@@ -7,10 +7,11 @@
     background-repeat: no-repeat;
     width: 100%;
     max-width: 1920px;
-    min-width: 480px;
+    min-width: 390px;
     height: 240px;
     margin-left: -8px; /* Consider removing this unless needed */
     overflow: hidden;
+    
 }
 
 @media (max-width: 768px) 

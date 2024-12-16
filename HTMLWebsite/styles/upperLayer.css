@@ -125,7 +125,6 @@ input:checked + label + .background
 {
     margin-top: -14%;
     margin-left: 35%;
-
     image-resolution: 300dpi;
     object-fit: cover;
     object-position: 50% 20%;
@@ -498,4 +497,18 @@ textarea.form-input
   {
     margin-bottom: -17%;
   }
+  
+  label
+  {
+    top:290px;
+    left: -128px;
+    z-index: 9;
+  }
+  
+  .background
+  {
+    height: 100%;
+    width: fit-content;
+  }
+
 }
