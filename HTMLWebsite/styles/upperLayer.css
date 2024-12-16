@@ -511,4 +511,9 @@ textarea.form-input
     width: fit-content;
   }
 
+  .form-button
+  {
+    padding-right: 23%;
+  }
+
 }
