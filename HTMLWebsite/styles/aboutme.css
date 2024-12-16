@@ -16,6 +16,13 @@ body
   transition: background-color 0.3s, color 0.3s;
 }
 
+.hiddenContainer
+{
+  margin: 10%;
+  width: 100%;
+  padding-bottom: 2%;
+}
+
 .gradient-text 
 {
   margin-top: 80px;
@@ -104,6 +111,7 @@ input:checked + label + .background
 
 label
 {
+  margin-bottom: 3%;
   left: 50%;
   top: 20px;
   width: 75px;
@@ -207,6 +215,14 @@ label:active::after
   border-radius: 28px;
   background: linear-gradient(270deg, #3effa5, #40d7f1);
   width: 25%;
+}
+
+@media (width: 2560px)
+{
+  .animated-box
+  {
+    margin-top: 16%;
+  }
 }
 
 @media (width: 1024px)
