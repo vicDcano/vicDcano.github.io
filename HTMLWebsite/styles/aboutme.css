@@ -18,9 +18,8 @@ body
 
 .gradient-text 
 {
-  margin-top: 9%;
-  padding-top: -1%;
-  margin-bottom: -1.5%;
+  margin-top: 80px;
+  text-align: center;
   font-size: 2rem;
   font-weight: bold;
   color: var(--bg-color);
@@ -67,9 +66,10 @@ input:checked + label + .background
 
 .animated-box 
 {
-  margin-top: 30%;
+  margin-top: 27%;
   width: 595px;
   height: 625px;
+  padding-bottom: 2%;
   background-color: var(--text-color);
   color: var(--bg-color);
   display: flex;
@@ -209,6 +209,37 @@ label:active::after
   width: 25%;
 }
 
+@media (width: 1024px)
+{
+  .animated-box
+  {
+    margin-top: 39%;
+  }
+}
+
+
+@media (max-width: 768px)
+{
+  .animated-box
+  {
+    margin-top: 450px;
+    width: 100%;
+    height: 650px;
+    padding-top: -3%;
+  }
+
+  .gradient-text
+  {
+    margin-top: 1rem;
+    padding-top: 0%;
+    margin-bottom: 1%;
+  }
+
+  .image-bio
+  {
+    display: none;
+  }
+}
 
 @media (max-width: 500px)
 {
@@ -231,10 +262,10 @@ label:active::after
 
   .animated-box
   {
-    margin-top: 155%;
+    margin-top: 595px;
     width: 100%;
     height: 975px;
-    padding-top: 8%;
+    padding-top: 20%;
   }
 
   .image-bio
