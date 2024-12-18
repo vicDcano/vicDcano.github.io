@@ -12,10 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
             document.documentElement.style.setProperty("--text-color", "#000"); // Light text
         }
 
-        // Reset and replay animation
-        animatedBox.style.animation = "none"; // Remove animation
-        void animatedBox.offsetWidth; // Trigger reflow
-        animatedBox.style.animation = "slide-in 2s ease-out forwards"; // Reapply animation
     };
 
     // Check localStorage for user preference
