@@ -173,24 +173,34 @@ label:active::after
   width: 43px;
 }
 
+button
+{
+  margin-top: -10rem;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  z-index: 3;
+}
+
 .link
 {
-  color: black; /* Text color */
+  color: var(--bg-color); /* Text color */
   text-decoration: none; /* Remove underline */
 }
 
 .back
 {
-  margin-top: -8rem;
-  color: white;                /* White text */
+  display: inline-block; /* Allows padding to work */
+  color: var(--bg-color);
   border: none;
   padding: 12px 15px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 28px;
   background: linear-gradient(270deg, #3effa5, #40d7f1);
-  width: 15rem;
-  z-index: 3;
+  text-align: center;
+  text-decoration: none; /* Remove underline */
+  width: 7rem;
 }
 
 @media(max-width: 768px)
@@ -210,5 +220,10 @@ label:active::after
   {
     display: none;
   }
+
+  button
+{
+  margin-top: -9rem;
+}
 
 }
