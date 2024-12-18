@@ -348,8 +348,7 @@ input:checked + label + .background
 {
   position: absolute;
   top: 8px; /* Adjust as necessary */
-  left: 50%;
-  transform: translateX(-50%);
+  left: -5%;
   height: 310px;
   width: 500px;
   padding: 20px;
@@ -357,10 +356,10 @@ input:checked + label + .background
   border: 2px solid black;
   z-index: 1000;
   opacity: 0;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
   display: flex;
   flex-direction: column; /* Ensure children are stacked */
   gap: 20px; /* Space between items */
+  animation: 0.25s slide-in;
 }
 
 .contact-box.hidden 
@@ -370,10 +369,25 @@ input:checked + label + .background
 
 .contact-box.active 
 {
-  transform: translateX(-50%) translateY(0); /* Slide into view */
   opacity: 1;
   display: block; /* Ensure it's visible */
 }
+
+@keyframes slide-in 
+{
+  from 
+  {
+    translate: 0 -500vw;
+    scale: 200% 1;
+  }
+
+  to 
+  {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+
 
 .close-button 
 {
@@ -397,26 +411,6 @@ input:checked + label + .background
 .contact-box.hidden 
 {
   display: none;
-}
-
-.contact-box.active 
-{
-  transform: translateX(-50%) translateY(0);
-  opacity: 1;
-  display: block;
-}
-
-.close-button 
-{
-  position: absolute;
-  top: 1px;
-  right: 7%;
-  background: none;
-  border: none;
-  font-size: 55px;
-  font-weight: bold;
-  cursor: pointer;
-  color: black;
 }
 
 /* Form Container */
@@ -491,7 +485,7 @@ textarea.form-input
 {
   .contact-box
   {
-    width: 100%;
+    width: 90%;
   }
 
   textarea.form-input
