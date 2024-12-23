@@ -525,7 +525,7 @@ textarea.form-input
 
   label
   {
-    top: 13rem;
+    top: 15rem;
     left: 0.01rem;
   }
 
@@ -569,7 +569,8 @@ textarea.form-input
 
   .dropdown-menu
   {
-    top: 7rem;
+    top: 6.5rem;
+    left: 3.5rem;
     height: 11rem;
     width: 12.5rem;
   }
@@ -582,9 +583,15 @@ textarea.form-input
   .dropdown-links .link 
   {
     top: 1rem;
-    padding-left: 3rem;
+    left: -0.75rem;
+    padding-left: 4.5rem;
     font-size: 1rem;
   }
+
+  .dropdown-links .link:hover 
+{
+  background-color: transparent; /* Change background color on hover */
+}
 
   .contact-box
   {
