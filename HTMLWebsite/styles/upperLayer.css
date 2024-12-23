@@ -533,19 +533,19 @@ textarea.form-input
   .mini-box-one
   {
     width: 15.5rem;
-    height: 11rem;
+    height: 12.5rem;
   }
 
   .gradient-text
   {
-    font-size: 180%;
-    left: 3%;
+    font-size: 175%;
+    left: 2.5%;
     top: 1.5rem;
   }
 
   .bio
   {
-    top: 5rem;
+    top: 5.75rem;
     font-size: medium;
   }
   .selfImage
