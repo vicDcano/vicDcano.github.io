@@ -292,7 +292,6 @@ body
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 .content-layout
@@ -532,7 +531,7 @@ textarea.form-input
 
   .mini-box-one
   {
-    width: 15.5rem;
+    width: 17rem;
     height: 12.5rem;
   }
 
@@ -560,17 +559,17 @@ textarea.form-input
 
   .arrow ul.flipped li:nth-child(1) 
   {
-    top: 9rem;
+    top: 11rem;
   }
 
   .arrow ul.flipped li:nth-child(2) 
   {
-    top: 9rem;
+    top: 11rem;
   }
 
   .dropdown-menu
   {
-    top: 5rem;
+    top: 7rem;
     height: 11rem;
     width: 12.5rem;
   }
@@ -591,6 +590,7 @@ textarea.form-input
   {
     height: 26.5rem;
     width: 20.5rem;
+    margin-left: 2rem;
   }
 
   .form-button
