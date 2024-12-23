@@ -1,34 +1,37 @@
-html, body 
+.header-box
 {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scrollbars */
-} 
+    position: absolute;
+    align-content: center;
+    height: 14.5rem;
+    width: 100%;
+    left: 50%;
+    overflow: hidden;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: -20;
+}
 
-
-.header
+.inner-header
 {
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 15vw;
-    overflow-x: hidden;
-    object-fit: cover;
+    image-resolution: 300dpi;
+    position: absolute;
+    top: 0;
+    left: 50%; /* Centers the image inside the header box */
+    width: 55rem; /* Adjust based on desired image size */
+    height: 15rem; /* Adjust based on desired image height */
+    object-fit: cover; /* Ensures the image scales proportionally */
+    transform: translateX(-50%);
+    z-index: -10;
 }
 
 @media (max-width: 768px) 
 {
-    .header 
+    .inner-header
     {
-        height: 180px; /* Adjust height for smaller screens */
+        width: 99.9%;
+        overflow-x: hidden;
     }
+  
 }
 
-.innerHeader
-{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+

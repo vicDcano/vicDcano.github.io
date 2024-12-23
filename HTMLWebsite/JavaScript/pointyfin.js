@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const menuRect = dropdownMenu.getBoundingClientRect();
 
             // Calculate the left and top positions
-            const pointerLeft = linkRect.left - menuRect.left - pointer.offsetWidth + 25; // Offset by pointer width + small gap
+            const pointerLeft = linkRect.left - menuRect.left - pointer.offsetWidth + 70; // Offset by pointer width + small gap
             const pointerTop = linkRect.top - menuRect.top + (linkRect.height - pointer.offsetHeight) / 2;
 
             // Set pointer position

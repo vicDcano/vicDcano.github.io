@@ -1,22 +1,37 @@
-.boxOne
+:root 
 {
-    position: absolute;
-    width: 350px;
-    height: 195px;
-    display: block;
-    top: 25%;
-    margin: center;
+  --bg-color: #fff; /* Default light mode */
+  --text-color: #000; /* Default light mode text */
 }
 
-.boxTwo
+.pointyFinger 
 {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  position: absolute; /* Positioned relative to the dropdown menu */
+  /*border-radius: 2px;*/
+  width: 24px;
+  height: 24px;
+  opacity: 0; /* Initially hidden */
+  transition: top 0.2s ease, left 0.2s ease, opacity 0.2s ease; /* Smooth animations */
+  pointer-events: none; /* Prevent interference with mouse events */
+  z-index: 8; /* Ensure it stays above links */
+  /*box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.082);*/
+}
 
-    display: block;
-    top: 4%;
-    left: 4%;
+.pointyFinger.bounce 
+{
+  animation: bounce 0.6s ease-in-out infinite; /* Add bounce animation */
+}
+
+@keyframes bounce 
+{
+  0%, 100% 
+  {
+    transform: translateX(0);
+  }
+  50% 
+  {
+    transform: translateX(-5px);
+  }
 }
 
 label
@@ -107,101 +122,21 @@ label:active::after
 
 }
 
-.background
-{
-  width: 100vw;
-  height: 100vh;
-  background: #fff;
-  z-index: -1;
-  position: absolute;
-  transition: 0.3s;
-}
-
-input:checked + label + .background
-{
-  background: #242424;
-}
-
-.selImage
-{
-    margin-top: -14%;
-    margin-left: 35%;
-    image-resolution: 300dpi;
-    object-fit: cover;
-    object-position: 50% 20%;
-    border-radius: 75%;
-    width: 85px;
-    min-width: none;
-    max-width: none;
-    height: 100px;
-    max-height: none;
-    min-height: none;
-}
-
-.pointyFinger 
-{
-  position: absolute; /* Positioned relative to the dropdown menu */
-  /*border-radius: 2px;*/
-  width: 24px;
-  height: 24px;
-  opacity: 0; /* Initially hidden */
-  transition: top 0.2s ease, left 0.2s ease, opacity 0.2s ease; /* Smooth animations */
-  pointer-events: none; /* Prevent interference with mouse events */
-  z-index: 10; /* Ensure it stays above links */
-  /*box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.082);*/
-}
-
-.pointyFinger.bounce 
-{
-  animation: bounce 0.6s ease-in-out infinite; /* Add bounce animation */
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(-5px);
-  }
-}
-
-
-.bio
-{
-  font-size: 115%;
-  text-wrap:wrap;
-  text-align: center;
-}
-
-.gradient-text
-{
-  font-size: 210%;
-  text-wrap:wrap;
-  font-weight: bold;
-  background: linear-gradient(to right, #ec2c99, #771199, #0e3eb8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-top: 1%;
-  margin-left: 17%;
-  margin-bottom: 5%;
-}
-
 .arrow 
 {
   width: 38px;
   height: 14px;
-  margin: auto;
   text-transform: uppercase;
   letter-spacing: 3px;
   text-align: center;
   position: absolute;
-  top: 75px;
-  left: 0;
+  top: 8rem;
+  left: 10rem;
   right: 0;
-  bottom: 20px;
   opacity: 0.75;
   transition: opacity 1s ease;
   animation: bouncey 1.6s linear infinite;
+  z-index: 4;
   /* border: 1px solid gold; */
 }
   
@@ -261,13 +196,13 @@ input:checked + label + .background
 .arrow ul.flipped li:nth-child(1) 
 {
   transform: rotate(-45deg);
-  top: 185px;
+  top: 14rem;
 }
 
 .arrow ul.flipped li:nth-child(2) 
 {
   transform: rotate(45deg);
-  top: 185px;
+  top: 14rem;
 }
 
 .dropdown > .link:focus, .link:hover
@@ -275,21 +210,21 @@ input:checked + label + .background
   color: black;
 }
 
-.dropdown
+.drop-down
 {
-  position: relative;
+  position: absolute;
+
 }
 
 .dropdown-menu 
 {
-  width: 225px;
-  height: 188px;
-  display: none; /* Hides the menu initially */
+  width: 19rem;
+  height: 15rem;
+  display: none; 
   position: absolute;
-  left: 55px;
-  top: calc(100% + 1.75rem);
   background-color: rgb(80, 253, 123);
-  padding: .75rem;
+  left: 2rem;
+  top: 6rem;
   border-radius: .75rem;
   box-shadow: 0 2px 5px 0 rgba(255, 255, 255, .1);
   opacity: 0;
@@ -298,13 +233,13 @@ input:checked + label + .background
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
 }
 
-.dropdown.active .dropdown-menu 
+.drop-down.active .dropdown-menu 
 {
   display: block; /* Shows the menu */
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
-   z-index: -3;
+  z-index: 0;
 }
 
 .information-grid
@@ -320,17 +255,19 @@ input:checked + label + .background
   display: flex; /* Use flexbox to organize links */
   flex-direction: column; /* Arrange links in a column */
   align-items: flex-start; /* Align links to the left */
-  gap: 0.5rem; /* Add spacing between links */
+  gap: 0.75rem; /* Add spacing between links */
 }
 
 .dropdown-links .link 
 {
+  top: 1.5rem;
   position: relative; /* Required for pointer positioning */
   font-size: 1.5rem; /* Bigger text size */
   color: black; /* Text color */
   text-decoration: none; /* Remove underline */
-  padding-left: 2rem; /* Add space for pointer */
+  padding-left: 5rem; /* Add space for pointer */
   transition: color 0.2s ease; /* Smooth hover effect */
+  z-index: 7;
 }
 
 .dropdown-links .link:hover 
@@ -344,12 +281,99 @@ input:checked + label + .background
   transform: translateY(-50%) scale(1.1); /* Slight zoom effect */
 }
 
+body 
+{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.content-layout
+{
+  align-self: center;
+  height: 80%;
+  width:50%;
+  display: flex;
+  block-size: 31.25rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mini-box-one
+{
+  position: absolute;
+  width: 350px;
+  height: 195px;
+  display: block;
+  top: 25%;
+  margin: center;
+}
+
+.mini-box-two
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 4%;
+  left: 4%;
+  z-index: 4;
+}
+
+.gradient-text
+{
+  font-size: 240%;
+  text-wrap:wrap;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  background: linear-gradient(to right, #ec2c99, #771199, #0e3eb8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bio
+{
+  font-size: 115%;
+  text-wrap:wrap;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  color: var(--bg-color);
+}
+
+.selfImage
+{
+  top: -4rem;
+  left: 8rem;
+  image-resolution: 300dpi;
+  object-fit: cover;
+  object-position: 50% 20%;
+  border-radius: 75%;
+  width: 85px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+
 .contact-box 
 {
   position: absolute;
-  top: 8px; /* Adjust as necessary */
-  left: -5%;
-  height: 310px;
+  top: 4rem; /* Adjust as necessary */
+  height: 390px;
   width: 500px;
   padding: 20px;
   background-color: rgb(243, 192, 98);
@@ -371,6 +395,7 @@ input:checked + label + .background
 {
   opacity: 1;
   display: block; /* Ensure it's visible */
+  left: -5rem;
 }
 
 @keyframes slide-in 
@@ -450,13 +475,13 @@ textarea.form-input
   height: 120px;               /* Taller for message input */
   width: 95%;
   resize: none;                /* Disable manual resizing */
-  margin-bottom: -12%;
+  margin-bottom: -10%;
 }
 
 /* Submit Button */
 .form-button 
 {
-  color: white;                /* White text */
+  color: var(--text-color);                /* White text */
   border: none;
   padding: 12px 15px;
   font-size: 16px;
@@ -476,39 +501,105 @@ textarea.form-input
 .form-title 
 {
   margin-top: -30px;                   /* Remove default margins */
-  font-size: 24px;
+  font-size: 3rem;
   font-weight: bold;
+  margin-bottom: -4rem;
+  color: var(--text-color);
 }
+
+.form-text
+{
+  font-size: 1.25rem;
+  margin-bottom: -1rem;
+  color: var(--text-color);
+}
+
 
 
 @media(max-width: 768px)
 {
-  .contact-box
+
+  body
   {
-    width: 90%;
+    overflow-x: hidden;
   }
 
-  textarea.form-input
-  {
-    margin-bottom: -17%;
-  }
-  
   label
   {
-    top: 225px;
-    left: 23px;
-    z-index: 90;
+    top: 13rem;
+    left: 0.01rem;
   }
-  
-  .background
+
+  .mini-box-one
   {
-    height: 100%;
-    width: fit-content;
+    width: 15.5rem;
+    height: 11rem;
+  }
+
+  .gradient-text
+  {
+    font-size: 180%;
+    left: 3%;
+    top: 1.5rem;
+  }
+
+  .bio
+  {
+    top: 5rem;
+    font-size: medium;
+  }
+  .selfImage
+  {
+    left: 5.5rem;
+  }
+
+  .arrow
+  {
+    left: 7rem
+  }
+
+  .arrow ul.flipped li:nth-child(1) 
+  {
+    top: 9rem;
+  }
+
+  .arrow ul.flipped li:nth-child(2) 
+  {
+    top: 9rem;
+  }
+
+  .dropdown-menu
+  {
+    top: 5rem;
+    height: 11rem;
+    width: 12.5rem;
+  }
+
+  .dropdown-links
+  {
+    gap: 0.55rem;
+  }
+
+  .dropdown-links .link 
+  {
+    top: 1rem;
+    padding-left: 3rem;
+    font-size: 1rem;
+  }
+
+  .contact-box
+  {
+    height: 26.5rem;
+    width: 20.5rem;
   }
 
   .form-button
   {
-    padding-right: 23%;
+    padding-right: 4rem;
   }
 
+  textarea.form-input 
+  {
+    margin-bottom: -19%;
+  }
 }
