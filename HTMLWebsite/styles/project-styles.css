@@ -1,0 +1,148 @@
+:root
+{
+  --light-color: #d3d6db;
+  --darkest-color: #303841;
+  --red-color: #be3144;
+  --dark-grey-color: #3a4750;
+  --light-grey-color: #6d787f;
+}
+
+body
+{
+  margin: 0;
+  padding: 0;
+  background-color: var(--dark-grey-color);
+}
+
+header
+{
+  margin: 0;
+  height: 7rem;
+  padding: 0;
+  width: 100%;
+  overflow: auto;
+  background-color: var(--red-color);
+}
+
+button
+{
+  border: none;
+  height: 55px;
+  width: 55px;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: var(--light-color);
+}
+
+button:active
+{
+  transform: translateY(5px);
+  background-color: var(--light-grey-color);
+}
+
+.button-container
+{
+  justify-self: center;
+  
+}
+
+.up-but
+{
+  margin-top: 35px;
+}
+
+.down-but
+{
+  margin-bottom: 35px;
+}
+
+.carousel
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.card
+{
+  background-color: var(--light-color);
+  border-radius: 5px;
+  position: absolute;
+  width: 250px;
+  height: 100px;
+  padding: 20px;
+  text-align: center;
+  will-change: transform opacity;
+  animation: carousel linear infinite;
+}
+
+.card:nth-child(1)
+{
+  animation-delay: -3s;
+}
+
+.card:nth-child(2)
+{
+  animation-delay: 0;
+}
+
+.card:nth-child(3)
+{
+  animation-delay: 3s;
+}
+
+.card:nth-child(4)
+{
+  animation-delay: 6s;
+}
+
+.card:last-child
+{
+  animation-delay: 9s;
+}
+
+@keyframes carousel
+{
+  0%
+  {
+    transform: translateY(100%) scale(0.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  3%, 20%
+  {
+    transform: translateY(100%) scale(0.7);
+    opacity: 0.4;
+    visibility: visible;
+  }
+
+  23%, 40%
+  {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  43%, 60%
+  {
+    transform: translateY(-100%) scale(0.7);
+    opacity: 0.4;
+    visibility: visible;
+  }
+
+  63%
+  {
+    transform: translateY(-100%) scale(0.5);
+    opacity: 0;
+    visibility: visible;
+  }
+
+  100%
+  {
+    transform: translateY(-100%) scale(0.5);
+    opacity: 0;
+    visibility: hidden;
+  }
+}

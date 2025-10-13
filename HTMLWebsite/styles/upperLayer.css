@@ -513,7 +513,11 @@ textarea.form-input
   color: var(--text-color);
 }
 
-
+.CaptchaNButton
+{
+  display: flex;
+  flex-direction: row;
+}
 
 @media(max-width: 768px)
 {
@@ -612,7 +616,7 @@ textarea.form-input
 
   .form-button
   {
-    padding-right: 4rem;
+    padding-right: 2rem;
   }
 
   textarea.form-input 
