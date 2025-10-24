@@ -11,7 +11,7 @@
         <link rel="stylesheet" type = "text/css" href="/HTMLWebsite/styles/header.css">
         <link rel="stylesheet" type = "text/css" href="/HTMLWebsite/styles/splashScreen.css">
 
-        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="https://www.google.com/recaptcha/api.js?onload=onLoadCallback&render=explicit" async defer></script>
         
     </head>
 
@@ -97,8 +97,8 @@
                                     <textarea name = "message" placeholder="Your message" class = "form-input" required></textarea>
                                 </div>
                                 <div class = "CaptchaNButton">
-                                    <div class="g-recaptcha" data-sitekey="6Ldj-OgrAAAAAN5Ie09f8lrlQJ6lW_1kW5mfbx42"></div>
-                                    <button class = "form-button">Submit</button>
+                                    <div id = "divCaptcha"></div>
+                                    <button id = "submitForm" class = "form-button" disabled>Submit</button>
                                 </div>
                             </div>
                         </form>

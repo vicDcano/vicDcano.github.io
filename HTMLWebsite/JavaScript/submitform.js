@@ -1,37 +1,23 @@
-const form = document.querySelector('form');
+const formCaptcha = document.getElementById('divCaptcha');
 
-form.addEventListener('submit', (e) =>
+function onLoadCallback()
 {
-    e.preventDefault;
-
-    const captchaResponse = grecaptcha.getResponse();
-
-    if(captchaResponse.length > 0)
-    {
-        throw new Error('Captcha not completed!');
-    }
-
-    const fd = new FormData(e.target);
-
-    const params = new URLSearchParams(fd);
-
-    fetch('http://127.0.0.1:5500/home.html', {
-        method: 'POST',
-        body: params,
-    })
-
-    .then(res => res.json())
-    .then(data => {
-        
-        if(data.captchaSuccess)
+    grecaptcha.render('divCaptcha', 
         {
-            console.log("Validation was successful!");
+            sitekey: '6Ldj-OgrAAAAAN5Ie09f8lrlQJ6lW_1kW5mfbx42',
+            callback: successCallback,
+            'expired-callback': expiredCallback,
         }
-        else
-        {
-            console.error("Validation has failed!");
-        }
-    })
-    .catch(err => console.error(err))
-    
-});
+    )
+
+}
+
+function successCallback() 
+{
+    document.getElementById('submitForm').disabled = false;
+}
+
+function expiredCallback() 
+{
+  document.getElementById('submitForm').disabled = true;
+}
