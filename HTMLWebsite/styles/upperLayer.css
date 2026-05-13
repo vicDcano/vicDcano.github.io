@@ -478,10 +478,11 @@ textarea.form-input
 }
 
 /* Submit Button */
+/*
 .form-button 
 {
   color: var(--text-color);                /* White text */
-  border: none;
+  /*border: none;
   padding: 12px 15px;
   font-size: 16px;
   cursor: pointer;
@@ -489,6 +490,28 @@ textarea.form-input
   background: linear-gradient(270deg, #771199, #ec2c99);
   transition: background-color 0.3s ease;
   width: 25%;
+}
+*/
+
+/* Submit Button */
+.form-button {
+  color: var(--text-color);                
+  border: none;
+  padding: 12px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 28px;
+  background: linear-gradient(270deg, #771199, #ec2c99);
+  transition: background-color 0.3s ease, opacity 0.3s ease; /* Added opacity transition */
+  width: 25%;
+}
+
+/* ADD THIS: How the button looks when disabled */
+.form-button:disabled {
+  background: #cccccc; /* Make it gray */
+  color: #666666;      /* Darker gray text */
+  cursor: not-allowed; /* Change mouse cursor to a "stop" sign */
+  opacity: 0.6;        /* Make it slightly see-through */
 }
 
 .form-button:hover 
