@@ -478,24 +478,8 @@ textarea.form-input
 }
 
 /* Submit Button */
-/*
-.form-button 
-{
-  color: var(--text-color);                /* White text */
-  /*border: none;
-  padding: 12px 15px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 28px;
-  background: linear-gradient(270deg, #771199, #ec2c99);
-  transition: background-color 0.3s ease;
-  width: 25%;
-}
-*/
-
-/* Submit Button */
 .form-button {
-  color: var(--text-color);                
+  color: var(--text-color);               /* White text */ 
   border: none;
   padding: 12px 15px;
   font-size: 16px;
