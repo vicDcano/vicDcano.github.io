@@ -61,7 +61,6 @@
 //     document.getElementById('captchaForm').value = response;
 //     document.getElementById('submitForm').disabled = false; // Enable submit button
 // }
-
 const form = document.getElementById('captchaForm');
 const submitButton = document.getElementById('submitForm');
 
@@ -70,24 +69,24 @@ document.addEventListener('DOMContentLoaded', function() {
     submitButton.disabled = true;
 });
 
-// 2. Callback for when the user successfully completes the hCaptcha
-function onCaptchaSuccess(response) {
-    // hCaptcha automatically fills the hidden 'h-captcha-response' textarea.
-    // We just need to enable the submit button.
+// 2. Attach to 'window' so the hCaptcha widget can find it globally
+window.onCaptchaSuccess = function(response) {
+    console.log("hCaptcha solved successfully!"); // Helpful for debugging
     submitButton.disabled = false; 
-}
+};
 
-// 3. Callback for when the hCaptcha token expires
-function onCaptchaExpired() {
-    // Disable the button again if they take too long to submit
+// 3. Attach to 'window' to disable the button if the user takes too long
+window.onCaptchaExpired = function() {
+    console.log("hCaptcha token expired.");
     submitButton.disabled = true; 
-}
+};
 
-// 4. Fallback validation on form submission
+// 4. Final safety check when the user clicks "Submit"
 form.addEventListener('submit', function(e) {
-    // Check the hidden textarea that hCaptcha automatically injects
+    // Look for the hidden textarea hCaptcha creates
     const hCaptchaResponse = form.querySelector('textarea[name=h-captcha-response]');
     
+    // If the token is missing or empty, stop the submission
     if (!hCaptchaResponse || !hCaptchaResponse.value) {
         e.preventDefault();
         alert("Please complete the hCaptcha to proceed.");
