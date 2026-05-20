@@ -372,7 +372,7 @@ body
 {
   position: absolute;
   top: 4rem; /* Adjust as necessary */
-  height: 390px;
+  height: 415px;
   width: 500px;
   padding: 20px;
   background-color: rgb(243, 192, 98);
@@ -464,7 +464,7 @@ body
   border: none;                /* Remove border */
   border-radius: 15px;          /* Rounded corners */
   font-size: 16px;             /* Readable font size */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Subtle shadow */
   box-sizing: border-box;      /* Prevent overflow issues */
 }
 
@@ -479,7 +479,7 @@ textarea.form-input
 
 /* Submit Button */
 .form-button {
-  color: var(--text-color);               /* White text */ 
+  color: var(--text-color);               /* White text */
   border: none;
   padding: 12px 15px;
   font-size: 16px;
@@ -488,6 +488,7 @@ textarea.form-input
   background: linear-gradient(270deg, #771199, #ec2c99);
   transition: background-color 0.3s ease, opacity 0.3s ease; /* Added opacity transition */
   width: 25%;
+  height: 10%;
 }
 
 /* ADD THIS: How the button looks when disabled */
@@ -524,6 +525,8 @@ textarea.form-input
 {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  gap: 1rem;
 }
 
 @media(max-width: 768px)
@@ -623,11 +626,23 @@ textarea.form-input
 
   .form-button
   {
-    padding-right: 2rem;
+    padding-right: 4rem;
   }
 
   textarea.form-input 
   {
     margin-bottom: -19%;
+  }
+
+  .CaptchaNButton
+  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .h-captcha
+  {
+    transform: scale(0.8);
   }
 }

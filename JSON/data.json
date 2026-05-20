@@ -1,0 +1,15 @@
+{
+  "projects": 
+  [
+    {
+      "title": "VR Microscope",
+      "category": "Simulation",
+      "description": "A tool for high-magnification lens transitions."
+    },
+    {
+      "title": "Inventory System",
+      "category": "Web App",
+      "description": "A system focused on inclusive design and accessibility."
+    }
+  ]
+}
