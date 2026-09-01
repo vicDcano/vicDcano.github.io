@@ -6,35 +6,90 @@
 
         <meta charset = "utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <link rel="stylesheet" type = "text/css" href="/HTMLWebsite/styles/project-styles.css">
-
+        
     </head>
 
-    <body>
-        <header>
-            <nav>
-            </nav>
-        </header>
+<body>
 
-        <div class = "button-container up-but">
-            <button>UP</button>
+    <div class = "bkg-image"></div>
+
+   <nav class = "project-nav">
+        <div class = "nav-item">
+            <a href="home.html">Home</a>
+            <a href="bio.html" class="active">About Me</a>
         </div>
 
-        <div class = "carousel">
-            <div class="card">1</div>
-            <div class="card">2</div>
-            <div class="card">3</div>
-            <div class="card">4</div>
-            <div class="card">5</div>
+        <button id="external-anim-toggle" class="toggle-anim-nav">ANIM: ON</button>
+    </nav>
+
+    <script>
+        document.getElementById('external-anim-toggle').addEventListener('click', function() {
+            
+            // NEW: Toggles the kill switch class on the entire body of the page
+            document.body.classList.toggle('static-mode');
+
+            // Visually toggle the button's colors and text instantly
+            if (this.innerText === "ANIM: ON") 
+            {
+                this.innerText = "ANIM: OFF";
+                this.style.background = "#ff007f";
+                this.style.boxShadow = "0 4px 0 #800040";
+            } 
+            else 
+            {
+                this.innerText = "ANIM: ON";
+                this.style.background = "#45f3ff";
+                this.style.boxShadow = "0 4px 0 #0b7a84";
+            }
+            
+            // Shout out to the browser that the toggle happened
+            window.dispatchEvent(new CustomEvent('toggleArcadeAnimation'));
+        });
+    </script>
+
+    <div class = "CD-Circle">
+        <!-- <iframe src="https://giphy.com/embed/p1UO4A2F1NHP2efsHz" width="480" height="480" style="" frameBorder="0" class="giphy-embed" allowFullScreen>
+        </iframe>
+        <p>
+            <a href="https://giphy.com/stickers/sony-cd-mini-disc-p1UO4A2F1NHP2efsHz">
+                via GIPHY
+            </a>
+        </p> -->
+
+        <script type="module" src="https://cdn.spline.design/@splinetool/viewer@2.0.12/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/ru0QHlhB40AxsUZC/scene.splinecode"></spline-viewer>
+    </div>
+
+    <div id="react-project-root"></div>
+
+    <footer>
+        <div class = "footer-items">
+            <div class="help">
+                <div class = "help-icon">
+                    <a help-text = "You can use your keyboard arrows key to go through the projects or use your mouse or mouse scroll wheel to go through the listing." href="#">
+                        <img src="./HTMLWebsite/imageFiles/QuestionMark.png" alt="?" width="40" height="30" style="padding-top: 0.25rem">
+                    </a>
+                </div>
+
+            </div>
+            <a class = "footer-text">Moving Around:</a>
+            <div id="up-gif">
+                <img src="./HTMLWebsite/imageFiles/KeyCap8BITSprite.gif" alt="Up Gif" width="45" height="35">
+            </div>
+            <div id="down-gif">
+                <img src="./HTMLWebsite/imageFiles/KeyCap8BITSprite.gif" alt="Down Gif" width="45" height="35" style="transform: rotate(180deg); margin-top: 9px;">
+            </div>
+            <div id="left-gif">
+                <img src="./HTMLWebsite/imageFiles/KeyCap8BITSprite.gif" alt="Left Gif" width="35" height="45" style="transform: rotate(270deg); margin-top: 9px;">
+            </div>
+            <div id="right-gif">
+                <img src="./HTMLWebsite/imageFiles/KeyCap8BITSprite.gif" alt="Right Gif" width="35" height="45" style="transform: rotate(90deg); margin-top: 9px;">
+            </div>
         </div>
+    </footer>
 
-        <div class = "button-container down-but">
-            <button>DOWN</button>
-        </div>
+    <script type="module" src="/src/main.jsx"></script>
 
-    </body>
-
-  <script src="/HTMLWebsite/JavaScript/carousel-script.js"></script>
+</body>
 
 </html>
