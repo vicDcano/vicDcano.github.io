@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    <head>
+        <title>Project Page</title>
+
+        <meta charset = "utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+      <script type="module" crossorigin src="./assets/project-szNDfmVG.js"></script>
+      <link rel="stylesheet" crossorigin href="./assets/project-jIwFiQzi.css">
+    </head>
+
+<body>
+
+    <div class = "bkg-image"></div>
+
+   <nav class = "project-nav">
+        <div class = "nav-item">
+            <a href="home.html">Home</a>
+            <a href="bio.html" class="active">About Me</a>
+        </div>
+
+        <button id="external-anim-toggle" class="toggle-anim-nav">ANIM: ON</button>
+    </nav>
+
+    <script>
+        document.getElementById('external-anim-toggle').addEventListener('click', function() {
+            
+            // NEW: Toggles the kill switch class on the entire body of the page
+            document.body.classList.toggle('static-mode');
+
+            // Visually toggle the button's colors and text instantly
+            if (this.innerText === "ANIM: ON") 
+            {
+                this.innerText = "ANIM: OFF";
+                this.style.background = "#ff007f";
+                this.style.boxShadow = "0 4px 0 #800040";
+            } 
+            else 
+            {
+                this.innerText = "ANIM: ON";
+                this.style.background = "#45f3ff";
+                this.style.boxShadow = "0 4px 0 #0b7a84";
+            }
+            
+            // Shout out to the browser that the toggle happened
+            window.dispatchEvent(new CustomEvent('toggleArcadeAnimation'));
+        });
+    </script>
+
+    <div class = "CD-Circle">
+        <!-- <iframe src="https://giphy.com/embed/p1UO4A2F1NHP2efsHz" width="480" height="480" style="" frameBorder="0" class="giphy-embed" allowFullScreen>
+        </iframe>
+        <p>
+            <a href="https://giphy.com/stickers/sony-cd-mini-disc-p1UO4A2F1NHP2efsHz">
+                via GIPHY
+            </a>
+        </p> -->
+
+        <script type="module" src="https://cdn.spline.design/@splinetool/viewer@2.0.12/build/spline-viewer.js"></script>
+        <spline-viewer url="https://prod.spline.design/ru0QHlhB40AxsUZC/scene.splinecode"></spline-viewer>
+    </div>
+
+    <div id="react-project-root"></div>
+
+    <footer>
+        <div class = "footer-items">
+            <div class="help">
+                <div class = "help-icon">
+                    <a help-text = "You can use your keyboard arrows key to go through the projects or use your mouse or mouse scroll wheel to go through the listing." href="#">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAQtJREFUWIXdV0ESwyAIlEym/+m34nvst/qfXujJDomCiFhnskd12AUFAYIBiIi1dQCAXlu7hfSIsXlGK6Z5KBvlSDm8UlIJETcREXuJa0IkEdUNzuvPMzUJH+9SsBSNYoHzWkMuiQhMNDaNwR7y3vMnNTXvqTHOM46Yuw4ahV8EWuReOGI8pavqCoLCeyu24JRuPaBRUEdgFpYL2KXwz7r3QK5heQTcBGhqwDQBVnIXASPkwwJGyUP+CyyFaJQ8/wn3yYIhAQAAuWv5B+iXrO6Kr/Cqks2GxBvXhkTdE15hyQJzTzgTxRsAALAOIxyktrz6CPPBZYMJxdLRrCZEEkNridtw2hJzMmYYz786X69zKj9TwgAAAABJRU5ErkJggg==" alt="?" width="40" height="30" style="padding-top: 0.25rem">
+                    </a>
+                </div>
+
+            </div>
+            <a class = "footer-text">Moving Around:</a>
+            <div id="up-gif">
+                <img src="data:image/gif;base64,R0lGODdhIAAgAHcAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFCgAAACwAAAAAIAAgAMEAAAB5eXmioqKysrICmoSPqcsxMqKcVMLQxHUzcOlFArY4UIVOF8O2rhFoVEh/FqnEZxWmI+sJCofE4OuIPBSXw5YOJfThEs9Ib3C9PqaIKs9G+ZVkULCKqzSnvi6mOwmPy9vu4sukyev3eSyQ/LUmlgMIMoQySFXYwwiW2EWmJfnxqFTYoSaCBnNpKLgJ4DWTuZWxM/rZgMfH2ufRgFW35AckuzQnVwAAIfkECQoAAAAsAAAAACAAIADBAAAAeXl5oqKisrKyApqEj6nLESOinFQO1+K4b3P/bUKQCSDonODItO5rBNrp1N3JLrKphn2+4NiGxNoFhkweisyha9fzqYAJqCcVwnqoCKtKOyXpZt9buPGoqCmcV/OtjMvn7ncRZre30tE+5DjGQ2P0I6bgtZGiaCZiWEWmFWnGtaQBJhVCGUM22KcJgIjCuOLYxSnqWbr05/cDeDjaeqXalcdEN1cAADs=" alt="Up Gif" width="45" height="35">
+            </div>
+            <div id="down-gif">
+                <img src="data:image/gif;base64,R0lGODdhIAAgAHcAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFCgAAACwAAAAAIAAgAMEAAAB5eXmioqKysrICmoSPqcsxMqKcVMLQxHUzcOlFArY4UIVOF8O2rhFoVEh/FqnEZxWmI+sJCofE4OuIPBSXw5YOJfThEs9Ib3C9PqaIKs9G+ZVkULCKqzSnvi6mOwmPy9vu4sukyev3eSyQ/LUmlgMIMoQySFXYwwiW2EWmJfnxqFTYoSaCBnNpKLgJ4DWTuZWxM/rZgMfH2ufRgFW35AckuzQnVwAAIfkECQoAAAAsAAAAACAAIADBAAAAeXl5oqKisrKyApqEj6nLESOinFQO1+K4b3P/bUKQCSDonODItO5rBNrp1N3JLrKphn2+4NiGxNoFhkweisyha9fzqYAJqCcVwnqoCKtKOyXpZt9buPGoqCmcV/OtjMvn7ncRZre30tE+5DjGQ2P0I6bgtZGiaCZiWEWmFWnGtaQBJhVCGUM22KcJgIjCuOLYxSnqWbr05/cDeDjaeqXalcdEN1cAADs=" alt="Down Gif" width="45" height="35" style="transform: rotate(180deg); margin-top: 9px;">
+            </div>
+            <div id="left-gif">
+                <img src="data:image/gif;base64,R0lGODdhIAAgAHcAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFCgAAACwAAAAAIAAgAMEAAAB5eXmioqKysrICmoSPqcsxMqKcVMLQxHUzcOlFArY4UIVOF8O2rhFoVEh/FqnEZxWmI+sJCofE4OuIPBSXw5YOJfThEs9Ib3C9PqaIKs9G+ZVkULCKqzSnvi6mOwmPy9vu4sukyev3eSyQ/LUmlgMIMoQySFXYwwiW2EWmJfnxqFTYoSaCBnNpKLgJ4DWTuZWxM/rZgMfH2ufRgFW35AckuzQnVwAAIfkECQoAAAAsAAAAACAAIADBAAAAeXl5oqKisrKyApqEj6nLESOinFQO1+K4b3P/bUKQCSDonODItO5rBNrp1N3JLrKphn2+4NiGxNoFhkweisyha9fzqYAJqCcVwnqoCKtKOyXpZt9buPGoqCmcV/OtjMvn7ncRZre30tE+5DjGQ2P0I6bgtZGiaCZiWEWmFWnGtaQBJhVCGUM22KcJgIjCuOLYxSnqWbr05/cDeDjaeqXalcdEN1cAADs=" alt="Left Gif" width="35" height="45" style="transform: rotate(270deg); margin-top: 9px;">
+            </div>
+            <div id="right-gif">
+                <img src="data:image/gif;base64,R0lGODdhIAAgAHcAACH/C05FVFNDQVBFMi4wAwEAAAAh+QQFCgAAACwAAAAAIAAgAMEAAAB5eXmioqKysrICmoSPqcsxMqKcVMLQxHUzcOlFArY4UIVOF8O2rhFoVEh/FqnEZxWmI+sJCofE4OuIPBSXw5YOJfThEs9Ib3C9PqaIKs9G+ZVkULCKqzSnvi6mOwmPy9vu4sukyev3eSyQ/LUmlgMIMoQySFXYwwiW2EWmJfnxqFTYoSaCBnNpKLgJ4DWTuZWxM/rZgMfH2ufRgFW35AckuzQnVwAAIfkECQoAAAAsAAAAACAAIADBAAAAeXl5oqKisrKyApqEj6nLESOinFQO1+K4b3P/bUKQCSDonODItO5rBNrp1N3JLrKphn2+4NiGxNoFhkweisyha9fzqYAJqCcVwnqoCKtKOyXpZt9buPGoqCmcV/OtjMvn7ncRZre30tE+5DjGQ2P0I6bgtZGiaCZiWEWmFWnGtaQBJhVCGUM22KcJgIjCuOLYxSnqWbr05/cDeDjaeqXalcdEN1cAADs=" alt="Right Gif" width="35" height="45" style="transform: rotate(90deg); margin-top: 9px;">
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
