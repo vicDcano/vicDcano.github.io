@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'; // Importing necessary React hooks for state management, side effects, and mutable refs
-import '../HTMLWebsite/styles/project-styles.css'; //Calling the CSS style sheet for the project
+// import '../HTMLWebsite/styles/project-styles.css'; //Calling the CSS style sheet for the project
 import myImage from '../HTMLWebsite/imageFiles/pattern_checkerboard.png'; // Calling out the image to use as background
 
 // ==========================================

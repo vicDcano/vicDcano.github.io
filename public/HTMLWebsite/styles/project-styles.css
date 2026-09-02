@@ -77,8 +77,8 @@ body
 .CD-Circle
 {
   position: fixed;
-  top: 7vh;
-  left: 90vh;
+  top: 15vh;
+  left: 47vw;
   width: 250px;
   height: 250px;
   display: flex;
