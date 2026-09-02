@@ -1,0 +1,37 @@
+.header-box
+{
+    position: absolute;
+    align-content: center;
+    height: 14.5rem;
+    width: 100%;
+    left: 50%;
+    overflow: hidden;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: -20;
+}
+
+.inner-header
+{
+    image-resolution: 300dpi;
+    position: absolute;
+    top: 0;
+    left: 50%; /* Centers the image inside the header box */
+    width: 55rem; /* Adjust based on desired image size */
+    height: 15rem; /* Adjust based on desired image height */
+    object-fit: cover; /* Ensures the image scales proportionally */
+    transform: translateX(-50%);
+    z-index: -10;
+}
+
+@media (max-width: 768px) 
+{
+    .inner-header
+    {
+        width: 99.9%;
+        overflow-x: hidden;
+    }
+  
+}
+
+

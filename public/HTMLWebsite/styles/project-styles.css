@@ -1,0 +1,969 @@
+/* Background & Rhythm Effects */
+body 
+{
+  margin: 0;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  background-color: #0b0c10; /* Clean fall-back base color */
+}
+
+/* --- Isolated Animated Background Layer --- */
+.bkg-image 
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -7; 
+  
+}
+
+.bkg-image::before,
+.bkg-image::after 
+{
+  content: "";
+  position: absolute;
+  top: -20%; 
+  left: -20%;
+  width: 150%;  
+  height: 150%; 
+  
+  background-image: url('../HTMLWebsite/imageFiles/pattern_checkerboard.png'); 
+  
+  /* Remove 'cover' and use a fixed pixel size to zoom in */
+  background-size: 500%; 
+  
+  background-repeat: repeat;
+  animation: seamless-crossfade-scroll 20s linear infinite;
+}
+
+/* Offset the second layer by exactly half the animation time (15s) */
+/* This guarantees one image is always fully visible to cover the jump! */
+.bkg-image::after 
+{
+  animation-delay: -10s; 
+}
+
+/* --- THE CROSSFADE KEYFRAMES --- */
+
+@keyframes seamless-crossfade-scroll 
+{
+  0% 
+  {
+    transform: translate3d(0, 0, 0);
+    opacity: 0; /* Starts completely invisible */
+  }
+  25% 
+  {
+    opacity: 1; /* Fully fades in */
+  }
+  75% 
+  {
+    opacity: 1; /* Stays solid while sliding */
+  }
+  100% 
+  {
+    /* Slides down and left, using percentages so it works on any size screen */
+    transform: translate3d(-30%, -30%, 0); 
+    
+    /* Fades out completely right before the harsh reset back to 0% */
+    opacity: 0; 
+  }
+}
+
+.CD-Circle
+{
+  position: fixed;
+  top: 7vh;
+  left: 90vh;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -5; /* Sits just above the main background but behind all content */
+}
+
+.ddr-container 
+{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 45px;
+  align-items: center;
+
+  /* Link the Tempo and Flash animations */
+  /* 'bounce-tempo' runs at 137 BPM (0.438s per beat) */
+  /* 'ambient-flash' runs independently to create erratic lighting variations */
+  animation: 
+    bounce-tempo 0.438s infinite cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* ambient-flash 0.438s infinite ease-in-out; */
+  /* background: radial-gradient(circle at 80%, #1f2833 0%, #0b0c10 70%); */
+}
+
+/**
+ * Animation set up
+ * 137 BPM Rhythm Bounce
+ * Simulates a speaker pulse: quickly scales up and drops opacity on the beat,
+ * then smoothly decays back to resting state.
+ */
+@keyframes bounce-tempo 
+{
+  0% 
+  {
+    transform: scale(1.00);
+    filter: brightness(1);
+  }
+
+  10% 
+  {
+    transform: scale(1.02); /* Subtle pulse outward so it doesn't break layout edges */
+    filter: brightness(1.25); /* Sharp brightness pop on the beat kick */
+  }
+
+  100% 
+  {
+    transform: scale(1.00);
+    filter: brightness(1);
+  }
+}
+
+/**
+ * Ambient Lighting Shifts
+ * Randomly adjustments over a longer timeline to simulate off-beat glow fluctuations
+ */
+@keyframes ambient-flash 
+{
+  0%, 100% { opacity: 0.85; }
+  23% { opacity: 0.95; filter: drop-shadow(0 0 10px rgba(69, 243, 255, 0.2)); }
+  45% { opacity: 0.80; }
+  70% { opacity: 1; filter: brightness(1.1); }
+  82% { opacity: 0.88; }
+}
+
+@keyframes slide 
+{
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1692px, 0, 0);
+  }
+}
+
+/* --- Left Screen Display Panel --- */
+.ddr-info-panel 
+{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 50%;
+  height: calc(100vh - 180px);
+  background: rgba(0, 0, 0, 0.75);
+  border: 4px solid #45f3ff;
+  box-shadow: 0 0 20px rgba(69, 243, 255, 0.5);
+  border-radius: 12px;
+  padding: 25px;
+  z-index: 20;
+
+  animation: border-flash 0.438s infinite ease-in-out;
+}
+
+@keyframes border-flash 
+{
+  0%, 100% { box-shadow: 0 0 20px rgb(69, 243, 255); }
+  50% { box-shadow: 0 0 20px rgb(79, 224, 224); }
+}
+
+.arcade-header h1 
+{
+  margin: 5px 0 0 0;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.category-tag 
+{
+  color: #45f3ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.project-preview-box 
+{
+  background: #1f2833;
+  border-left: 5px solid #ff007f;
+  padding: 1px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.tech-tag 
+{
+  display: inline-block;
+  background: #ff007f;
+  color: white;
+  padding: 6px 12px;
+  margin: 0 8px 8px 0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.select-button 
+{
+  background: #45f3ff;
+  color: #000;
+  border: none;
+  padding: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 0 #0b7a84;
+  transition: all 0.1s ease;
+}
+
+.select-button:active  
+{
+  transform: translateY(5px);
+  box-shadow: none;
+}
+
+/* --- Right Side Wheel Viewport Framework (Desktop View) --- */
+.ddr-wheel-viewport 
+{
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center; 
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden; 
+}
+
+/* The structural central hub anchor point */
+.ddr-wheel 
+{
+  position: relative;
+  width: 350px;
+  height: 64px; /* Matches the exact structural card height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Rebuilt Track Cards via Absolute Stacking --- */
+.wheel-card 
+{
+  position: absolute; /* Stack everything in the exact center layer baseline */
+  width: 320px;
+  height: 64px;
+  box-sizing: border-box;
+  background: #1f2833;
+  border: 2px solid #66fcf1;
+  border-radius: 6px;
+  cursor: pointer;
+  
+  /* Handles transforms via the newly computed circular javascript layout parameters */
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), 
+              background 0.2s, 
+              opacity 0.3s, 
+              box-shadow 0.2s;
+
+  /* Perfect dynamic crescent stair alignment shape mapping values */
+  margin-right: calc(max(var(--offset), -1 * var(--offset)) * 22px);
+}
+
+.wheel-card.active 
+{
+  background: #45f3ff;
+  border-color: #fff;
+  color: #000;
+  box-shadow: -15px 0 25px rgba(69, 243, 255, 0.7);
+}
+
+.wheel-card-inner 
+{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.wheel-id 
+{
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-right: 20px;
+  opacity: 0.7;
+}
+
+.wheel-title 
+{
+  font-size: 1.1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+a
+{
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+.project-nav 
+{
+  background-color: rgb(46, 107, 228);
+  width: 100%;
+  height: 3.5rem;
+  position: absolute;
+  margin-top: -.5rem;
+  z-index: 30;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding-right: 30px; 
+}
+
+.nav-item
+{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+  padding-left: 70px;
+  padding-top: 7px;
+}
+
+footer
+{
+  height: 2.25rem;
+  background-color: rgb(46, 107, 228);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 30;
+}
+
+/* --- INTERMEDIATE FIX: For smaller laptops and tablets (769px to 1024px) --- */
+@media (max-width: 1024px) and (min-width: 769px) 
+{
+  .ddr-container 
+  {
+    height: 8%; /* Shrinks the container height to give more room for the wheel and prevent overflow */
+    padding: 55px; /* Shrinks the massive 45px outer padding to give elements room to breathe */
+  }
+
+  .ddr-info-panel 
+  {
+    margin-top: 0; /* Removes the top margin to give more vertical space */
+    max-width: 55%; /* Gives the text box slightly more screen percentage */
+    padding: 20px; 
+    height: 26rem; /* Shrinks the height to give more room for the wheel and prevent overflow */
+  }
+
+  .ddr-wheel-viewport 
+  {
+    overflow: visible; /* Allows the wheel to extend beyond the viewport if needed */
+    padding-top: 90px; /* Adds a bit of breathing room at the top */
+    justify-content: center; /* Pulls the wheel from off-screen right to dead center */
+  }
+
+  .arcade-header h1 
+  {
+    font-size: 2rem; /* Scales down the title */
+  }
+
+  .project-preview-box 
+  {
+    font-size: 1rem;
+    padding: 15px;
+  }
+
+  /* Shrink the physical size of the wheel cards so they don't hit the summary box */
+  .wheel-card 
+  {
+    width: 260px; 
+  }
+  
+  .wheel-id 
+  {
+    font-size: 1.2rem;
+  }
+  
+  .wheel-title 
+  {
+    font-size: 1rem;
+  }
+}
+
+/* --- HEIGHT FIX: Prevents overflow on short screens (Like 517px tall) --- */
+@media (max-height: 650px) 
+{
+  .project-nav
+  {
+    height: 2.5rem; /* Shrinks the nav bar to give more vertical space */
+    padding-top: 5px; /* Adjusts the top padding to keep the nav items vertically centered */
+    padding-bottom: 5px; /* Adjusts the bottom padding to keep the nav items vertically centered */
+  }
+  
+  .ddr-info-panel 
+  {
+    margin-top: -10px; /* Removes the top margin to give more vertical space */
+    justify-content: flex-start; /* Stops forcing elements apart */
+    gap: 15px; /* Uses consistent spacing instead */
+    overflow-y: auto; /* Turns the box into a scrollable area if the text is too long */
+  }
+  
+  .ddr-wheel-viewport 
+  {
+    transform: scale(0.85); /* Shrinks the entire wheel assembly so cards don't clip off the top/bottom */
+  }
+}
+
+/* --- MOBILE DEVICE OVERRIDES --- */
+@media (max-width: 768px) 
+{
+  body 
+  {
+    overscroll-behavior: none; 
+  }
+
+  .ddr-container 
+  {
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 0;
+    padding: 85px 15px 85px 15px;/* Shrinks the massive desktop padding */
+    gap: 1rem;
+    overflow-y: auto; /* Allows scrolling if the content is taller than the phone */
+    width: 100vw;
+    overflow-x: hidden; /* Prevents horizontal scrolling on small phones */
+    height: 100vh;
+    box-sizing: border-box;
+  }
+
+  /* .ddr-container::after 
+  {
+    content: "";
+    display: block;
+    min-height: 40px; /* Guarantees a 40px gap between the largest summary and the footer */
+    /*width: 100%;
+    flex-shrink: 0; /* Prevents Flexbox from squishing this buffer */
+  /*} */
+  .ddr-container::after 
+  {
+
+    display: none;
+/* Guarantees a 40px gap between the largest summary and the footer */
+/* Prevents Flexbox from squishing this buffer */
+  }
+
+  /* --- The Stretched Summary Box --- */
+  .ddr-info-panel 
+  {
+    order: 2;
+    max-width: 100%; /* Overrides the desktop 50% that was squishing everything */
+    width: 100%;
+    height: auto; /* Allows the box to grow vertically with the content instead of trying to fit a fixed height */
+    flex: none;
+    justify-content: flex-start; /* Aligns content to the top of the box for better mobile readability */
+    gap: 7px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: -45px;
+  }
+
+  .tag-row 
+  {
+    justify-content: center; /* Centers the pink tech tags */
+  }
+
+  /* --- 2. Bring the Wheel Back on Screen --- */
+  .ddr-wheel-viewport 
+  {
+    order: -1;
+    width: 100%;
+    height: 4rem;
+    flex: none;
+    justify-content: center; /* Pulls the wheel from off-screen right to dead center */
+    align-items: center;
+    overflow: visible;
+    margin-bottom: 3rem;
+  }
+
+  .ddr-wheel 
+  {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* --- 3. Force the Wheel to be Horizontal --- */
+  .wheel-card 
+  {
+    margin-right: 0 !important; /* Kills the desktop crescent curve alignment */
+    width: 240px; /* Scales the cards down slightly for phone screens */
+    
+    /* Overrides React's inline translateY with a horizontal translateX */
+    /* Uses your custom --offset math to space the cards left and right */
+    transform: translateX(calc(var(--offset) * 260px)) scale(0.85) !important;
+  }
+
+  .wheel-card.active 
+  {
+    /* Pops the active card UP and makes it larger, rather than pushing it left */
+    transform: translateX(calc(var(--offset) * 2px)) translateY(-15px) scale(1.1) !important;
+  }
+
+  .nav-item
+  {
+    width: 100%;
+    height: 2.5rem;
+    padding-left: 20px;
+    z-index: 30;
+  }
+
+}
+
+/* Updated Button Class - No fixed positioning required! */
+.toggle-anim-nav 
+{
+  color: #000;
+  background: #45f3ff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #0b7a84;
+  border-radius: 4px;
+  transition: all 0.1s ease;
+}
+
+.toggle-anim-nav:active 
+{
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+/* --- ANIMATION KILL SWITCH --- */
+
+/* Targets the container, info panel, and background layers when static mode is active */
+.static-mode .ddr-container,
+.static-mode .ddr-info-panel,
+.static-mode .bkg-image::before,
+.static-mode .bkg-image::after 
+{
+  animation: none !important;
+}
+
+/* Ensure the background stays visible when the crossfade animation is killed */
+.static-mode .bkg-image::before 
+{
+  opacity: 1 !important;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.static-mode .bkg-image::after 
+{
+  opacity: 0 !important; /* Hide the second layer so it doesn't overlap weirdly */
+}
+
+
+/*---------SELECTED ITEM TEMPLATE STYLE---------*/
+/* --- HTML OVERRIDES FOR DETAILS SCREEN --- */
+body.hide-arcade-assets .bkg-image,
+body.hide-arcade-assets .CD-Circle,
+body.hide-arcade-assets .toggle-anim-nav,
+body.static-mode .CD-Circle 
+{
+  display: none !important;
+}
+
+/* The new static "Results Screen" background */
+body.hide-arcade-assets 
+{
+  background-color: #0e30b5;
+
+  /* Creates a static, retro-wireframe grid */
+  background-image:
+  repeating-linear-gradient(135deg, rgba(69, 243, 255, 0.489) 0px, rgba(69, 243, 255, 0.489) 1px, transparent 1px, transparent 80px),
+  repeating-linear-gradient(-135deg, rgba(69, 243, 255, 0.489) 0px, rgba(69, 243, 255, 0.489) 1px, transparent 1px, transparent 80px);
+
+  background-position: center center;
+}
+
+/* --- ARCADE HUD LAYOUT --- */
+.details-screen-container 
+{
+  width: 100vw;
+  height: calc(115vh - 2.25rem);
+  box-sizing: border-box;
+  padding: 80px 45px 0px 45px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- THE BULLETPROOF 2-COLUMN STICKY LAYOUT --- */
+.hud-master-wrapper 
+{
+  z-index: 10;
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: row; /* Content on the left, Button on the right */
+  align-items: flex-start; /* Stops the button from stretching */
+  gap: 20px; /* The exact physical distance between your panels and the button */
+}
+
+.hud-layout 
+{
+  flex: 1; /* Allows the layout to naturally fill the left column */
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 0;
+}
+
+.hud-layout::after 
+{
+  content: "";
+  display: block;
+  min-height: 80px; 
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* The core styling for our data blocks */
+.hud-panel 
+{
+  background: rgba(31, 40, 51, 0.95);
+  border: 2px solid #45f3ff;
+  padding: 35px;
+  position: relative;
+  
+  /* Slices the top-left and bottom-right corners off for a mechanical look */
+  clip-path: polygon(25px 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%, 0 25px);
+}
+
+/* Add a glowing accent line to the panels */
+.hud-panel::before 
+{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #ff007f;
+}
+
+.hud-header-content 
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.hud-title-group h1 
+{
+  margin: 5px 0 15px 0;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 0px #ff007f; /* Offset shadow like an old CRT monitor */
+  text-transform: uppercase;
+}
+
+.hud-body 
+{
+  display: grid;
+  grid-template-columns: 1fr; /* 2/3 text, 1/3 images */
+  gap: 30px;
+}
+
+.hud-text-content 
+{
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #e0e6ed;
+}
+
+.hud-text-content p 
+{
+  /* Forces the browser to render line breaks (\n) and empty vertical spacing */
+  white-space: pre-line; 
+  
+  /* Creates a classic academic tab indent at the start of each paragraph */
+  text-indent: 40px; 
+  
+  /* Reset margins slightly to let pre-line handle spacing cleanly */
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* Dynamic State: Only splits into 2 columns if React detects images in the array */
+.hud-body.has-images 
+{
+  grid-template-columns: 2fr 1fr; 
+}
+
+.hud-image-gallery 
+{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.hud-image 
+{
+  width: 100%;
+  height: auto;
+  border: 2px solid #45f3ff;
+  filter: grayscale(20%) contrast(120%); /* Gives images a slight arcade monitor crunch */
+  transition: filter 0.3s ease;
+}
+
+.hud-image:hover 
+{
+  filter: grayscale(0%) contrast(100%);
+}
+
+.hud-action-bar 
+{
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* --- INLINE IMAGES & CAPTIONS --- */
+.content-block 
+{
+  display: grid;
+  /* Default: 1 column. Text takes up 100% of the space if there is no image */
+  grid-template-columns: 1fr; 
+  gap: 40px;
+  margin-bottom: 40px;
+  align-items: flex-start; /* Pins the image to the absolute top of the paragraph */
+}
+
+/* Dynamic State: Splits the grid if React detects an image for this paragraph */
+.content-block.has-side-image 
+{
+  grid-template-columns: 2fr 1fr; /* Text gets 2/3 space, Image gets 1/3 space */
+}
+
+.block-text p 
+{
+  margin-top: 0; /* Removes default paragraph margin so text perfectly aligns with the top of the image */
+}
+
+.block-visual 
+{
+  display: flex;
+  flex-direction: column;
+  position: sticky; /* Optional: Makes the image float alongside the text if the paragraph is super long */
+  top: 20px;
+}
+
+.image-caption 
+{
+  margin-top: 12px;
+  font-size: 0.9rem;
+  color: #45f3ff;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-left: 3px solid #ff007f;
+  padding-left: 10px;
+}
+
+.return-btn 
+{
+  height: 2.5rem;
+  width: 6rem;
+  background: #ff007f;
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 2px 2px;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #c7006b;
+  border-radius: 4px;
+  margin-right: -15px;
+  margin-left: -5px;
+  z-index: 1;
+}
+
+/* --- THE NEW RIGHT SIDEBAR COLUMN --- */
+.return-sidebar 
+{
+  position: sticky;
+  top: 0px; /* Matches your top padding so it locks smoothly when you scroll */
+}
+
+.footer-items 
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+}
+
+.help-icon a
+{
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.help-icon a::before
+{
+  content: attr(help-text);
+  position: absolute;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius:12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  white-space: pre-line;
+  max-width: 280px;
+  width: max-content; 
+  text-align: center; 
+  line-height: 1.4; 
+  transition: 200ms ease;
+
+  background-color: #0e30b5;
+
+  /*Hide the text items*/
+  transform: translate(-50%, 10px) rotate(15deg);
+  opacity: 0;
+  pointer-events: none;
+  bottom: 100%;
+  left: 50%;
+  z-index: 10;
+}
+
+
+.help-icon a::after
+{
+  content: '';
+  position: absolute;
+  border-top: 7px solid #0e30b5;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+
+  bottom: 100%;
+  left: 50%;
+
+  transition: 200ms ease;
+
+  /*Hide the text items*/
+  transform: translate(-50%, 10px) rotate(15deg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/*When hovering over the image*/
+.help-icon a:hover::before
+{
+  opacity: 1;
+  transform: translate(-50%, -12px) rotate(0);
+}
+
+.help-icon a:hover::after
+{
+  transform: translate(-50%, -4px) rotate(0);
+  opacity: 1;
+}
+
+@media (max-width: 768px) 
+{
+  .hud-body 
+  {
+    grid-template-columns: 1fr; /* Stacks text and images on mobile */
+  }
+
+  .hud-title-group h1 
+  {
+    font-size: 2rem;
+  }
+
+  .details-screen-container 
+  {
+    padding: 80px 15px 0px 15px;
+  }
+
+  .inline-image, .image-caption 
+  {
+    max-width: 100%; /* Allows images to take up the full phone screen */
+  }
+
+  .content-block.has-side-image 
+  {
+    /* On small phone screens, force the image to drop below the paragraph so it isn't unreadable */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  .return-btn 
+  {
+    height: 2rem;
+    width: 3rem;
+    font-size: .6rem;
+  }
+
+  /* Compresses the layout back to a single column on phones */
+  .hud-master-wrapper 
+  {
+    flex-direction: column; 
+  }
+
+  /* Clean, compact mobile animation button */
+  .toggle-anim-nav
+  {
+    width: 7rem; /* Lets the button naturally wrap the text */
+    height: 2rem; /* Removes the height conflict so padding works */
+    padding: 6px 12px; /* 6px top/bottom perfectly removes the massive empty space */
+    font-size: 0.8rem; /* Keeps the text scaled nicely for phones */
+    white-space: nowrap;
+    text-align: center;
+    box-sizing: border-box; /* Stops padding from breaking the math */
+  }
+
+  #up-gif,
+  #down-gif,
+  #left-gif,
+  #right-gif,
+  .footer-text /* Added this so "Moving Around:" also hides and leaves a clean footer */
+  {
+    display: none !important;
+  }
+
+  /* 2. Keep your existing logic for the CD-Circle */
+  body.hide-arcade-assets .CD-Circle,
+  body.static-mode .CD-Circle 
+  {
+    display: none !important;
+  }
+
+}
