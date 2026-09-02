@@ -8,12 +8,14 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(import.meta.dirname, 'index.html'), 
-        project: resolve(import.meta.dirname, 'project.html'), 
+
+        index: resolve(import.meta.dirname, 'index.html'), 
+        home: resolve(import.meta.dirname, 'home.html'), 
+        project: resolve(import.meta.dirname, 'project.html'),
+        bio: resolve(import.meta.dirname, 'bio.html'),
       },
     },
   },
-  
   server: {
     configureServer(server) {
       server.middlewares.use((req, res, next) => {
