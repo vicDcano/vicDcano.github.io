@@ -31,7 +31,7 @@ body
   width: 150%;  
   height: 150%; 
   
-  background-image: url('../HTMLWebsite/imageFiles/pattern_checkerboard.png'); 
+  background-image: url('/HTMLWebsite/imageFiles/pattern_checkerboard.png'); 
   
   /* Remove 'cover' and use a fixed pixel size to zoom in */
   background-size: 500%; 
