@@ -64,18 +64,27 @@ const myProjects = [
       contentBlocks: 
       [
         {
-          text: ` This project main purpose was done for research in helping and unsderstanding biology in a virtual reality. Giving the idea and feeling of looking at samples from a microscope level.`,
-          image: `../HTMLWebsite/projectImageFiles/VRMicroscope/pinkpantheress.jpeg`,
+          text: ` This project is designed and built to support research and enhance learning styles in certain academic subjects through virtual reality. This project uses a mix of online resources and in-house products, such as samples recorded and created in the school lab and brought into the project.`,
+          // image: `../HTMLWebsite/projectImageFiles/VRMicroscope/pinkpantheress.jpeg`,
           caption: `FIG 1: Custom shader graph simulating depth of field and lens distortion.`
         },
         {
-          text: ` i used online assets such as the model`,
+          text: ` This project used the Unity game engine and XR libraries and was built for the Meta Quest 3 headset. Everything was coded in C# and designed as an online resource for multiple people to engage with.`,
           
         },
         {
-          text: ` Aliquam laoreet ligula in felis rutrum ornare. Sed consectetur, ante sit amet viverra rhoncus, orci risus convallis felis, id vestibulum elit odio sit amet nibh. Sed dignissim iaculis ex, nec imperdiet velit dignissim vitae. Pellentesque dignissim lacus ut ex tincidunt congue. Vivamus porta vitae ex ac aliquet. Donec ultrices, arcu et maximus molestie, lectus sapien facilisis enim, vel mattis velit justo eu mauris. Nulla ornare metus a erat fringilla bibendum. Nunc mauris mi, aliquam quis enim ut, porta vestibulum sem. Ut faucibus mauris quis ante dapibus, et efficitur eros mollis. Aliquam nec nibh ultrices, porttitor turpis nec, varius nunc. `,
-          image: `../HTMLWebsite/projectImageFiles/VRMicroscope/pinkpantheress.jpeg`,
+          text: ` I did this as the sole developer, handling both front-end and back-end development. I made sure it met the client's specific demands and ideas.`,
+          // image: `../HTMLWebsite/projectImageFiles/VRMicroscope/pinkpantheress.jpeg`,
           caption: `FIG 1: Custom shader graph simulating depth of field and lens distortion.`
+        },
+        {
+          text: ' I balanced improving the user experience with making it accessible.'
+        },
+        {
+          text: ' At the beginning of this project, it was designed to use sample images. This was to see how it feels and how it would work when switching between different microscopic strengths while the user is in the microscope view. Later, the client wanted to switch between images and video, since live cells were moving. This was achieved to meet the client`s requirements and enhance the project.'
+        },
+        {
+          text: ' This provided an interesting way to interact and help bridge the resource gap that schools previously could not access, while also helping students understand biology more interactively. This project is meant not just to advance understanding of the subject, but to help those without easy access to certain tools that can be obtained for numerous reasons.'
         }
       ]
     },
