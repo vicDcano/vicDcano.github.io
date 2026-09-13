@@ -19,12 +19,13 @@ import myImage from '../HTMLWebsite/imageFiles/pattern_checkerboard.png'; // Cal
     category: "", 
     shortDesc: "", 
     tags: ["", "", ""], 
-    status: "",
+    status: "", link: "",
     startDate: "", 
     endDate: "",
       contentBlocks: 
       [
         {
+          Heading: '',
           text: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pellentesque in quam ut auctor. Pellentesque feugiat gravida ante at hendrerit. Praesent pellentesque quam at enim rutrum laoreet. Etiam hendrerit tempus neque in ornare. Mauris sit amet ex nec turpis convallis congue tincidunt id magna. Integer nec lobortis neque. Nulla auctor sed arcu a scelerisque. Aliquam fringilla at ligula sit amet dapibus. Aliquam erat volutpat. Etiam vitae leo mauris. Nunc malesuada purus eget malesuada aliquam. Morbi dui nunc, semper ut massa quis, malesuada tempus nulla. Vivamus pellentesque justo magna, et laoreet neque tincidunt vulputate. Etiam pharetra sed arcu ut luctus. Nulla facilisi. Quisque accumsan ipsum convallis elit facilisis dignissim. `,
           image: `../HTMLWebsite/projectImageFiles/VRMicroscope/pinkpantheress.jpeg`,
           caption: `FIG 1: Custom shader graph simulating depth of field and lens distortion.`
@@ -50,7 +51,66 @@ import myImage from '../HTMLWebsite/imageFiles/pattern_checkerboard.png'; // Cal
 
 const myProjects = [
   { 
-    id: 1, 
+    id: 1,
+    title: "Fractals/DTM", 
+    category: "Simulation", 
+    shortDesc: "", 
+    tags: ["VR", "Unity", "C#"], 
+    status: "In Progress", link: "",
+    startDate: "September 2025", 
+    endDate: "In Progress",
+
+      contentBlocks: 
+      [
+        {
+          text: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pellentesque in quam ut auctor. Pellentesque feugiat gravida ante at hendrerit. Praesent pellentesque quam at enim rutrum laoreet. Etiam hendrerit tempus neque in ornare. Mauris sit amet ex nec turpis convallis congue tincidunt id magna. Integer nec lobortis neque. Nulla auctor sed arcu a scelerisque. Aliquam fringilla at ligula sit amet dapibus. Aliquam erat volutpat. Etiam vitae leo mauris. Nunc malesuada purus eget malesuada aliquam. Morbi dui nunc, semper ut massa quis, malesuada tempus nulla. Vivamus pellentesque justo magna, et laoreet neque tincidunt vulputate. Etiam pharetra sed arcu ut luctus. Nulla facilisi. Quisque accumsan ipsum convallis elit facilisis dignissim. `,
+          image: `../HTMLWebsite/projectImageFiles/VRMicroscope/pinkpantheress.jpeg`,
+          caption: `FIG 1: Custom shader graph simulating depth of field and lens distortion.`
+        },
+        {
+          text: ` Vestibulum vitae dolor pulvinar, faucibus tellus eu, convallis sapien. Nunc quis mi mauris. Ut et leo nunc. Proin eu eros ut massa efficitur aliquam. Quisque nec sem sollicitudin, finibus turpis laoreet, interdum nunc. Sed vel cursus odio. Nam a massa id nunc fringilla fermentum. Etiam egestas quis orci vel blandit. Vestibulum felis sem, consequat sed semper sit amet, interdum vitae erat. Pellentesque varius magna quis purus rhoncus ornare. Nam dictum quam quis arcu malesuada, eget cursus nunc iaculis. Praesent urna mauris, placerat at aliquet sed, finibus eu ipsum. Donec eget auctor mauris. Suspendisse viverra ullamcorper volutpat. Nulla ac elementum`,
+          
+        },
+        {
+          text: ` Aliquam laoreet ligula in felis rutrum ornare. Sed consectetur, ante sit amet viverra rhoncus, orci risus convallis felis, id vestibulum elit odio sit amet nibh. Sed dignissim iaculis ex, nec imperdiet velit dignissim vitae. Pellentesque dignissim lacus ut ex tincidunt congue. Vivamus porta vitae ex ac aliquet. Donec ultrices, arcu et maximus molestie, lectus sapien facilisis enim, vel mattis velit justo eu mauris. Nulla ornare metus a erat fringilla bibendum. Nunc mauris mi, aliquam quis enim ut, porta vestibulum sem. Ut faucibus mauris quis ante dapibus, et efficitur eros mollis. Aliquam nec nibh ultrices, porttitor turpis nec, varius nunc. `,
+          image: `../HTMLWebsite/projectImageFiles/VRMicroscope/pinkpantheress.jpeg`,
+          caption: `FIG 1: Custom shader graph simulating depth of field and lens distortion.`
+        }
+      ]
+  },
+
+  { 
+    id: 2,
+    title: "Inventory Managment", 
+    category: "Desktop Application", 
+    shortDesc: "", 
+    tags: ["Java", "JFrame", "MYSql"], 
+    status: "Beta/Complete", link: "https://github.com/vicDcano/CSC481Management",
+    startDate: "August 27, 2024", 
+    endDate: "December 8, 2024",
+
+      contentBlocks: 
+      [
+        {
+          Heading: 'Testing Here',
+          text: ` Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris pellentesque in quam ut auctor. Pellentesque feugiat gravida ante at hendrerit. Praesent pellentesque quam at enim rutrum laoreet. Etiam hendrerit tempus neque in ornare. Mauris sit amet ex nec turpis convallis congue tincidunt id magna. Integer nec lobortis neque. Nulla auctor sed arcu a scelerisque. Aliquam fringilla at ligula sit amet dapibus. Aliquam erat volutpat. Etiam vitae leo mauris. Nunc malesuada purus eget malesuada aliquam. Morbi dui nunc, semper ut massa quis, malesuada tempus nulla. Vivamus pellentesque justo magna, et laoreet neque tincidunt vulputate. Etiam pharetra sed arcu ut luctus. Nulla facilisi. Quisque accumsan ipsum convallis elit facilisis dignissim. `,
+          image: `../HTMLWebsite/projectImageFiles/VRMicroscope/pinkpantheress.jpeg`,
+          caption: `FIG 1: Custom shader graph simulating depth of field and lens distortion.`,
+        },
+        {
+          text: ` Vestibulum vitae dolor pulvinar, faucibus tellus eu, convallis sapien. Nunc quis mi mauris. Ut et leo nunc. Proin eu eros ut massa efficitur aliquam. Quisque nec sem sollicitudin, finibus turpis laoreet, interdum nunc. Sed vel cursus odio. Nam a massa id nunc fringilla fermentum. Etiam egestas quis orci vel blandit. Vestibulum felis sem, consequat sed semper sit amet, interdum vitae erat. Pellentesque varius magna quis purus rhoncus ornare. Nam dictum quam quis arcu malesuada, eget cursus nunc iaculis. Praesent urna mauris, placerat at aliquet sed, finibus eu ipsum. Donec eget auctor mauris. Suspendisse viverra ullamcorper volutpat. Nulla ac elementum`,
+          
+        },
+        {
+          text: ` Aliquam laoreet ligula in felis rutrum ornare. Sed consectetur, ante sit amet viverra rhoncus, orci risus convallis felis, id vestibulum elit odio sit amet nibh. Sed dignissim iaculis ex, nec imperdiet velit dignissim vitae. Pellentesque dignissim lacus ut ex tincidunt congue. Vivamus porta vitae ex ac aliquet. Donec ultrices, arcu et maximus molestie, lectus sapien facilisis enim, vel mattis velit justo eu mauris. Nulla ornare metus a erat fringilla bibendum. Nunc mauris mi, aliquam quis enim ut, porta vestibulum sem. Ut faucibus mauris quis ante dapibus, et efficitur eros mollis. Aliquam nec nibh ultrices, porttitor turpis nec, varius nunc. `,
+          image: `../HTMLWebsite/projectImageFiles/VRMicroscope/pinkpantheress.jpeg`,
+          caption: `FIG 1: Custom shader graph simulating depth of field and lens distortion.`
+        }
+      ]
+  },
+
+  { 
+    id: 3, 
     title: "VR Microscope", 
     category: "Simulation", 
     shortDesc: "Interactive microscope done in the Unity game engine, examining samples under a microscope.", 
@@ -65,10 +125,11 @@ const myProjects = [
       [
         {
           text: ` This project is designed and built to support research and enhance learning styles in certain academic subjects through virtual reality. This project uses a mix of online resources and in-house products, such as samples recorded and created in the school lab and brought into the project.`,
-          // image: `../HTMLWebsite/projectImageFiles/VRMicroscope/pinkpantheress.jpeg`,
+          image: `../HTMLWebsite/projectImageFiles/VRMicroscope/pinkpantheress.jpeg`,
           caption: `FIG 1: Custom shader graph simulating depth of field and lens distortion.`
         },
         {
+          heading: 'Tools:',
           text: ` This project used the Unity game engine and XR libraries and was built for the Meta Quest 3 headset. Everything was coded in C# and designed as an online resource for multiple people to engage with.`,
           
         },
@@ -81,19 +142,13 @@ const myProjects = [
           text: ' I balanced improving the user experience with making it accessible.'
         },
         {
-          text: ' At the beginning of this project, it was designed to use sample images. This was to see how it feels and how it would work when switching between different microscopic strengths while the user is in the microscope view. Later, the client wanted to switch between images and video, since live cells were moving. This was achieved to meet the client`s requirements and enhance the project.'
+          text: ' At the beginning of this project, it was designed to use sample images. This was to see how it feels and how it would work when switching between different microscopic strengths while the user is in the microscope view. Later, the client wanted to switch between images and video, since live cells were moving. This was achieved to meet the client\'s requirements and enhance the project.'
         },
         {
           text: ' This provided an interesting way to interact and help bridge the resource gap that schools previously could not access, while also helping students understand biology more interactively. This project is meant not just to advance understanding of the subject, but to help those without easy access to certain tools that can be obtained for numerous reasons.'
         }
       ]
     },
-
-    { 
-      id: 2, title: "", category: "", shortDesc: "", tags: [], status: "",
-    startDate: "", endDate: "", 
-    longDesc: "" 
-  },
   
 ];
 
@@ -261,10 +316,12 @@ export default function ProjectsApp()
       if (isViewingDetails) 
       {
         document.body.classList.add('hide-arcade-assets');
+        document.body.classList.add('hide-footer-items');
       } 
       else 
       {
         document.body.classList.remove('hide-arcade-assets');
+        document.body.classList.remove('hide-footer-items');
       }
     }, [isViewingDetails]);
 
@@ -298,7 +355,15 @@ export default function ProjectsApp()
 
                   <span className="category-tag">SYSTEM LOG // {activeProject.category}</span>
                   <h1>{activeProject.title}</h1>
-                  <h3>Status: {activeProject.status}</h3>
+                  <h3>Status: {activeProject.status}
+
+                    {activeProject?.link && (
+                      <span>
+                      {" "}| Link: <a href={activeProject.link} target="_blank" rel="noreferrer">{activeProject.link}</a>
+                      </span>
+                    )}
+
+                  </h3>
                   
                   {/* Dynamically generates the tech tags based on the array data */}
                   <div className="tag-row" style={{ justifyContent: 'flex-start' }}>
@@ -333,9 +398,10 @@ export default function ProjectsApp()
                       
                       // Dynamically adds the 'has-side-image' class if this specific paragraph has a picture
                       <div key={index} className={`content-block ${block.image ? 'has-side-image' : ''}`}>
-                        
+
                         <div className="block-text">
-                          {block.text && <p>{block.text}</p>}
+                          {block.heading && <h1 class="article-heading">{block.heading}</h1>} {/*Header*/}
+                          {block.text && <p>{block.text}</p>} {/*Body*/}
                         </div>
                         
                         {block.image && (
