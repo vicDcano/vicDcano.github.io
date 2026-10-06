@@ -992,7 +992,14 @@ body.hide-arcade-assets
   #down-gif,
   #left-gif,
   #right-gif,
-  .footer-text /* Added this so "Moving Around:" also hides and leaves a clean footer */
+  .help-icon,
+  .footer-text,
+  .CD-Circle
+  {
+    display: none !important;
+  }
+
+  footer, .footer-items
   {
     display: none !important;
   }
