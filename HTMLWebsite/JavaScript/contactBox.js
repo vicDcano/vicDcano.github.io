@@ -3,10 +3,12 @@ document.addEventListener('click', (e) => {
     const contactBox = document.querySelector(".contact-box"); // Find the contact box
     const closeButton = e.target.closest(".close-button");
 
-    if (contactLink && contactLink.textContent.trim() === "Contact") {
+    if (contactLink && contactLink.textContent.trim() === "Contact") 
+    {
         e.preventDefault(); // Prevent the default anchor behavior
 
-        if (contactBox) {
+        if (contactBox) 
+        {
             // Toggle visibility
             const isHidden = contactBox.classList.contains('hidden');
             contactBox.classList.toggle('hidden', !isHidden); // Remove 'hidden' if present
@@ -14,7 +16,8 @@ document.addEventListener('click', (e) => {
         }
     }
 
-    if (closeButton && contactBox) {
+    if (closeButton && contactBox) 
+    {
         contactBox.classList.add('hidden'); // Hide the contact box
         contactBox.classList.remove('active'); // Remove the active class
     }
