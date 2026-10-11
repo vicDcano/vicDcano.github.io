@@ -949,18 +949,22 @@ body.hide-arcade-assets
   .details-screen-container 
   {
     padding: 80px 15px 0px 15px;
+    
   }
 
-  .inline-image, .image-caption 
+  .content-block-wiki 
   {
-    max-width: 100%; /* Allows images to take up the full phone screen */
+    display: flex !important;
+    flex-direction: column-reverse !important;
   }
 
-  .content-block.has-side-image 
+  .block-visual-wiki 
   {
-    /* On small phone screens, force the image to drop below the paragraph so it isn't unreadable */
-    grid-template-columns: 1fr; 
-    gap: 20px;
+    float: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 20px 0 0 0 !important;
+    margin-left: 0 !important;
   }
 
   .return-btn 

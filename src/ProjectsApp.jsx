@@ -855,6 +855,8 @@ export default function ProjectsApp()
             if (visibleOffset > halfLength) visibleOffset -= myProjects.length;
             if (visibleOffset < -halfLength) visibleOffset += myProjects.length;
 
+            if (Math.abs(index - selectedIndex) > 4) return null;
+
             const isActive = index === selectedIndex;
 
             // This dynamically generates the CSS for each specific card based on its offset math
