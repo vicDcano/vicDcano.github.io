@@ -554,7 +554,7 @@ textarea.form-input
   label
   {
     top: 15rem;
-    left: 0.01rem;
+    left: 1.5rem;
   }
 
   .mini-box-one
@@ -582,26 +582,26 @@ textarea.form-input
 
   .arrow
   {
-    top: 10.5rem;
+    top: 6.5rem;
     left: 9rem;
   }
 
   .arrow ul.flipped li:nth-child(1) 
   {
-    top: 7.7rem;
+    top: 3rem;
   }
 
   .arrow ul.flipped li:nth-child(2) 
   {
-    top: 7.7rem;
+    top: 3rem;
   }
 
   .dropdown-menu
   {
     top: 5rem;
-    left: 4.5rem;
-    height: 12rem;
-    width: 12.5rem;
+    left: 4rem;
+    height: 14rem;
+    width: 12.75rem;
   }
 
   .dropdown-links
@@ -611,10 +611,10 @@ textarea.form-input
 
   .dropdown-links .link 
   {
-    top: 1rem;
-    left: -0.75rem;
+    top: 1.5rem;
+    left: -3.5rem;
     padding-left: 4.5rem;
-    font-size: 1rem;
+    font-size: 1.35rem;
   }
 
   .dropdown-links .link:hover 
@@ -660,5 +660,11 @@ textarea.form-input
   .h-captcha
   {
     transform: scale(0.8);
+  }
+
+  .linkedin-icon
+  {
+    top: 15rem;
+    left: 17.15rem;
   }
 }
