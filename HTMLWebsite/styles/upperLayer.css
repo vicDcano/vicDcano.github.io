@@ -159,7 +159,7 @@ label:active::after
 .arrow ul li:nth-child(1) 
 {
   left: 0;
-  top: 0;
+  top: 13.5rem;
   transform: rotate(45deg);
   border-radius: 5px 0 0 5px;
 }
@@ -167,7 +167,7 @@ label:active::after
 .arrow ul li:nth-child(2) 
 {
   left: 14px;
-  top: 0;
+  top: 13.5rem;
   transform: rotate(-45deg);
   border-radius: 0 5px 5px 0;
 }
@@ -196,13 +196,13 @@ label:active::after
 .arrow ul.flipped li:nth-child(1) 
 {
   transform: rotate(-45deg);
-  top: 16rem;
+  top: 0rem;
 }
 
 .arrow ul.flipped li:nth-child(2) 
 {
   transform: rotate(45deg);
-  top: 16rem;
+  top: 0rem;
 }
 
 .dropdown > .link:focus, .link:hover
@@ -219,27 +219,27 @@ label:active::after
 .dropdown-menu 
 {
   width: 19rem;
-  height: 18rem;
-  display: none; 
+  height: 15.5rem;
+  display: block; 
   position: absolute;
   background-color: rgb(80, 253, 123);
   left: 2rem;
   top: 5rem;
   border-radius: .75rem;
   box-shadow: 0 2px 5px 0 rgba(255, 255, 255, .1);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(-10px);
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
   transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+  z-index: 0;
 }
 
 .drop-down.active .dropdown-menu 
 {
-  display: block; /* Shows the menu */
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-  z-index: 0;
+  display: none; /* Shows the menu */
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
 }
 
 .information-grid
@@ -251,7 +251,7 @@ label:active::after
 
 .dropdown-links 
 {
-  margin-top: .55rem;
+  margin-top: .65rem;
   display: flex; /* Use flexbox to organize links */
   flex-direction: column; /* Arrange links in a column */
   align-items: flex-start; /* Align links to the left */
@@ -260,7 +260,7 @@ label:active::after
 
 .dropdown-links .link 
 {
-  top: 1.5rem;
+  top: 2rem;
   position: relative; /* Required for pointer positioning */
   font-size: 1.5rem; /* Bigger text size */
   color: black; /* Text color */
@@ -480,7 +480,8 @@ textarea.form-input
 }
 
 /* Submit Button */
-.form-button {
+.form-button 
+{
   color: var(--text-color);               /* White text */
   border: none;
   padding: 12px 15px;
@@ -494,7 +495,8 @@ textarea.form-input
 }
 
 /* How the button looks when disabled */
-.form-button:disabled {
+.form-button:disabled 
+{
   background: #cccccc; /* Make it gray */
   color: #666666;      /* Darker gray text */
   cursor: not-allowed; /* Change mouse cursor to a "stop" sign */
@@ -529,6 +531,15 @@ textarea.form-input
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+}
+
+.linkedin-icon
+{
+  content: "";
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  left: 25rem;
 }
 
 
@@ -571,18 +582,18 @@ textarea.form-input
 
   .arrow
   {
-    top: 7.7rem;
+    top: 10.5rem;
     left: 9rem;
   }
 
   .arrow ul.flipped li:nth-child(1) 
   {
-    top: 10.5rem;
+    top: 7.7rem;
   }
 
   .arrow ul.flipped li:nth-child(2) 
   {
-    top: 10.5rem;
+    top: 7.7rem;
   }
 
   .dropdown-menu
@@ -607,9 +618,9 @@ textarea.form-input
   }
 
   .dropdown-links .link:hover 
-{
-  background-color: transparent; /* Change background color on hover */
-}
+  {
+    background-color: transparent; /* Change background color on hover */
+  }
 
   .contact-box
   {
