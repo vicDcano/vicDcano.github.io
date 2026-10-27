@@ -374,21 +374,12 @@ export default function ProjectsApp()
     }
 
     return 0;
-    // const saved = sessionStorage.getItem('savedIndex');
-    // return saved ? parseInt(saved) : 0;
   });
   
   const [isStatic, setIsStatic] = useState(false); 
   
   // Tracks if we are looking at the details. Checks URL first, then memory.
   const [isViewingDetails, setIsViewingDetails] = useState(false);
-
-  // const [isViewingDetails, setIsViewingDetails] = useState(() => {
-  //   const urlView = getUrlParam('view');
-  //   if (urlView === 'details') return true;
-  //   if (urlView === 'select') return false;
-  //   return sessionStorage.getItem('viewingDetails') === 'true';
-  // });
 
   // ==========================================
   // REFS (MUTABLE VARIABLES)
@@ -436,38 +427,7 @@ export default function ProjectsApp()
         scrollContainer.scrollTop = 0;
       }
     }
-    // Save to session storage as a backup
-    // sessionStorage.setItem('savedIndex', selectedIndex);
 
-    // Update the URL silently without reloading the page
-    // const currentProject = myProjects[selectedIndex];
-    // const newUrl = new URL(window.location.href);
-
-    // newUrl.searchParams.set('id', currentProject.id);
-
-    // // Keep the URL clean by only including the 'view' parameter when necessary
-    // if(isViewingDetails)
-    // {
-    //   newUrl.searchParams.set('view', 'details');
-    // }
-    
-    // else
-    // {
-    //   newUrl.searchParams.delete('view');
-    // }
-
-    // window.history.replaceState({}, '', newUrl.href);
-
-    // // Force the scrollbar to the top whenever the details screen is active
-    // if (isViewingDetails) 
-    // {
-    //   const scrollContainer = document.querySelector('.details-screen-container');
-
-    //   if (scrollContainer) 
-    //   {
-    //     scrollContainer.scrollTop = 0;
-    //   }
-    // }
   }, [selectedIndex, isViewingDetails]);
 
   // ==========================================
@@ -762,8 +722,6 @@ export default function ProjectsApp()
             </div>
 
           </div> {/* Closes Column 1: hud-layout */}
-
-
           
 
         </div> {/* Closes hud-master-wrapper */}
@@ -883,11 +841,6 @@ export default function ProjectsApp()
 
                 // Clicking a card forces it to become the active selection
                 onClick={() => setSelectedIndex(index)}
-                onMouseEnter={() => {
-
-                  // Only allow hovering to select if we are on a desktop display (prevents mobile touch bugs)
-                  if (window.innerWidth > 768) setSelectedIndex(index);
-                }}
               >
 
                 <div className="wheel-card-inner">

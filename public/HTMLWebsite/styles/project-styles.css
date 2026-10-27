@@ -588,9 +588,9 @@ footer
 body.hide-arcade-assets .bkg-image,
 body.hide-arcade-assets .CD-Circle,
 body.hide-arcade-assets .toggle-anim-nav,
-body.hide-footer-items  .footer-items,
+body.hide-footer-items  .navi-control-anim,
 body.static-mode .CD-Circle, 
-body.static-mode .footer-items
+body.static-mode .navi-control-anim
 {
   display: none !important;
 }
@@ -755,24 +755,15 @@ body.hide-arcade-assets
   margin-top: 20px;
 }
 
-/* --- INLINE IMAGES & CAPTIONS --- */
-/* .content-block 
-{
-  display: grid;
-  /* Default: 1 column. Text takes up 100% of the space if there is no image */
-  /* grid-template-columns: 1fr; 
-  gap: 40px;
-  margin-bottom: 40px;
-  align-items: flex-start; Pins the image to the absolute top of the paragraph */
-/* } */
-
 /* --- THE WIKIPEDIA LAYOUT --- */
-.content-block-wiki {
+.content-block-wiki 
+{
   display: block; /* Strips away all flex/grid rules that cause massive gaps */
   margin-bottom: 15px;
 }
 
-.block-visual-wiki {
+.block-visual-wiki 
+{
   float: right;
   clear: right; /* The crucial fix: Forces Image 2 to drop directly below Image 1. No step-ladders. */
   width: 35%; /* Prevents the image from becoming massive */
@@ -808,31 +799,6 @@ body.hide-arcade-assets
   margin-bottom: -5px;
 }
 
-/* .block-text p 
-{
-  margin-top: 0; /* Removes default paragraph margin so text perfectly aligns with the top of the image */
-/* } */
-
-/* .block-visual 
-{
-  display: flex;
-  flex-direction: column;
-  position: sticky; /* Optional: Makes the image float alongside the text if the paragraph is super long */
-  /* top: 20px;
-}
-
-.image-caption 
-{
-  margin-top: 12px;
-  font-size: 0.9rem;
-  color: #45f3ff;
-  opacity: 0.8;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  border-left: 3px solid #ff007f;
-  padding-left: 10px; */
-/* } */ 
-
 .return-btn 
 {
   height: 2.5rem;
@@ -865,6 +831,13 @@ body.hide-arcade-assets
   justify-content: center;
   gap: 10px;
   height: 100%;
+}
+
+.navi-control-anim
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .help-icon a
