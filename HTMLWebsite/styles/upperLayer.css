@@ -542,6 +542,10 @@ textarea.form-input
   left: 25rem;
 }
 
+.social-link
+{
+  text-decoration: blue !important;
+}
 
 @media(max-width: 768px)
 {
@@ -588,12 +592,12 @@ textarea.form-input
 
   .arrow ul.flipped li:nth-child(1) 
   {
-    top: 3rem;
+    top: 1.75rem;
   }
 
   .arrow ul.flipped li:nth-child(2) 
   {
-    top: 3rem;
+    top: 1.75rem;
   }
 
   .dropdown-menu
