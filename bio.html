@@ -1,17 +1,30 @@
 <!DOCTYPE html>
+
 <html lang = "en">
+
     <head>
+        
         <title>AboutVictor</title>
 
         <meta charset = "utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" type = "text/css" href="/HTMLWebsite/styles/aboutme.css">
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
         
         </head>
 
         <body>
-            <div class = "entire-page">
+            
+            <nav class = "project-nav">
+
+                <div class = "nav-item">
+                    <a class = "nav-text" href="home.html">Home</a>
+                    <a href="project.html" class="nav-text active">Project</a>
+                    <a href="#" class="nav-text link">Contact</a>
+                </div>
+
+                <div class = "entire-page">
                 <script src = "/HTMLWebsite/JavaScript/generallightdarkmode.js"></script>
 
                 <input type = "checkbox" id = "darkmode-toggle"/>
@@ -21,7 +34,49 @@
                     <svg class = "moon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
                 </label>
             </div>
+
+            </nav>
+
+            <div class="contact-box hidden">
+                    <button class="close-button">&times;</button>
+                    <form id = "captchaForm" action="https://api.web3forms.com/submit" method="POST">
+                        <div class = "contact-form">
+                            <h1 class="form-title">Get in touch</h1>
+                            <p class = "form-text">Please note that my resume is shared upon request through this form to prioritize privacy and security.</p>
+                            <input type="hidden" name="access_key" value="11a03938-35e7-46ac-8cb7-7ac19519b3f5">
+                            
+                            <div class="form-group">
+                                <input type = "text" name = "name" placeholder="Your Name" class = "form-input" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type = "email" name = "email" placeholder="Your Email" class = "form-input" required>
+                            </div>
+
+                            <div class = "form-group">
+                                <textarea name = "message" placeholder="Your message" class = "form-input" required></textarea>
+                            </div>
+
+                            <div class = "CaptchaNButton">
+
+                                <div class="h-captcha"
+                                    data-sitekey="50b2fe65-b00b-4b9e-ad62-3ba471098be2"
+                                    data-callback="onCaptchaSuccess" 
+                                    data-expired-callback="onCaptchaExpired">
+                                </div>
+
+                                <script src="https://js.hcaptcha.com/1/api.js?recaptchacompat=off" async defer></script>
+
+                                <button type="submit" id="submitForm" class="form-button" disabled>Submit</button>
+
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
             <div class = "animated-box-layer">
+
                 <div class = animated-box>
                     <h1 class = "header">About me</h1>
                     <p class = "bio-text">
@@ -43,10 +98,20 @@
                     </div>
 
                 </div>
-                <button>
-                    <a href="home.html" class="back link">Home</a>
-                </button>
+
+                <div class="linkedin-icon">
+                    
+                    <a href ="https://www.linkedin.com/in/victordavidcano" target="_blank" rel="noopener noreferrer" class = "social-link">
+                        <i class="fi fi-brands-linkedin" style="font-size: 45px;"></i>
+                    </a>
+
+                </div>
+
             </div>
+
+            <script src = "/HTMLWebsite/JavaScript/submitform.js"></script>
+
+            <script src = "/HTMLWebsite/JavaScript/contactBox.js"></script>
 
         </body>
     </html>
