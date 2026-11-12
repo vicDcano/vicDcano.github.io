@@ -374,6 +374,29 @@ textarea.form-input
   text-decoration: var(--bg-color) !important;
 }
 
+@media (min-width: 992px)
+{
+  .project-nav
+  {
+    margin-top: -58%;
+  }
+
+  .linkedin-icon
+  {
+    left: 35rem;
+  }
+
+  label
+  {
+    left: 40%;
+  }
+
+  .contact-box
+  {
+    left: 42rem;
+  }
+}
+
 @media(max-width: 768px)
 {
   .animated-box-layer
