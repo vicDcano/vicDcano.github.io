@@ -454,14 +454,6 @@ footer
     box-sizing: border-box;
   }
 
-  /* .ddr-container::after 
-  {
-    content: "";
-    display: block;
-    min-height: 40px; /* Guarantees a 40px gap between the largest summary and the footer */
-    /*width: 100%;
-    flex-shrink: 0; /* Prevents Flexbox from squishing this buffer */
-  /*} */
   .ddr-container::after 
   {
 
