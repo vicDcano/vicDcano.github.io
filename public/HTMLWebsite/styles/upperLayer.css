@@ -159,7 +159,7 @@ label:active::after
 .arrow ul li:nth-child(1) 
 {
   left: 0;
-  top: 13.5rem;
+  top: 11rem;
   transform: rotate(45deg);
   border-radius: 5px 0 0 5px;
 }
@@ -167,7 +167,7 @@ label:active::after
 .arrow ul li:nth-child(2) 
 {
   left: 14px;
-  top: 13.5rem;
+  top: 11rem;
   transform: rotate(-45deg);
   border-radius: 0 5px 5px 0;
 }
@@ -219,7 +219,7 @@ label:active::after
 .dropdown-menu 
 {
   width: 19rem;
-  height: 15.5rem;
+  height: 13rem;
   display: block; 
   position: absolute;
   background-color: rgb(80, 253, 123);
@@ -337,7 +337,7 @@ body
   position: absolute;
   top: 5%;
   left: 5%;
-  background: linear-gradient(to right, #ec2c99, #771199, #0e3eb8);
+  background: linear-gradient(to right, #ec2c99, #c03ceb, #3c70f4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -592,19 +592,19 @@ textarea.form-input
 
   .arrow ul.flipped li:nth-child(1) 
   {
-    top: 1.75rem;
+    top: 1rem;
   }
 
   .arrow ul.flipped li:nth-child(2) 
   {
-    top: 1.75rem;
+    top: 1rem;
   }
 
   .dropdown-menu
   {
     top: 5rem;
     left: 4rem;
-    height: 14rem;
+    height: 11.25rem;
     width: 12.75rem;
   }
 

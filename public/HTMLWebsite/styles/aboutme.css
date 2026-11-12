@@ -17,6 +17,39 @@ body
   overflow-x: hidden;
 }
 
+.project-nav 
+{
+  background-color: rgb(46, 107, 228);
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 3.5rem;
+  margin-top: -79%;
+  z-index: 30;
+  justify-content: space-between; 
+  align-items: center;
+  padding-right: 30px; 
+}
+
+.nav-item
+{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+  padding-left: 70px;
+  padding-top: 7px;
+}
+
+.nav-text
+{
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
 .header
 {
   text-align: center;
@@ -43,7 +76,7 @@ body
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: 1.5s slide-in;
+  animation: 1s slide-in;
 }
 
 @keyframes slide-in 
@@ -85,8 +118,8 @@ body
 
 label
 {
-  left: 50%;
-  top: 20px;
+  left: 35%;
+  top: 18px;
   width: 75px;
   height: 30px;
   position: relative;
@@ -173,34 +206,172 @@ label:active::after
   width: 43px;
 }
 
-button
+.contact-box 
 {
-  margin-top: -10rem;
+  position: fixed;
+  top: 7rem; /* Adjust as necessary */
+  left: 25rem;
+  height: 415px;
+  width: 500px;
+  padding: 20px;
+  background-color: #A47DAB;
+  border: 2px solid black;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column; /* Ensure children are stacked */
+  gap: 20px; /* Space between items */
+  animation: 0.25s slide-in;
+}
+
+.contact-box.hidden 
+{
+  display: none; /* Completely hide the box */
+}
+
+.contact-box.active 
+{
+  opacity: 1;
+  display: block; /* Ensure it's visible */
+}
+
+@keyframes slide-in 
+{
+  from 
+  {
+    translate: 0 -500vw;
+    scale: 200% 1;
+  }
+
+  to 
+  {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+
+
+.close-button 
+{
+  position: absolute;
+  top: 1px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  background: none;
   border: none;
-  background-color: transparent;
-  outline: none;
-  z-index: 3;
+  font-size: 55px; /* Adjust size as needed */
+  font-weight: bold;
+  cursor: pointer;
+  color: black; /* Change to white if in dark mode */
 }
 
-.link
+.close-button:hover 
 {
-  color: var(--bg-color); /* Text color */
-  text-decoration: none; /* Remove underline */
+  color: red; /* Optional hover effect */
 }
 
-.back
+/* Form Container */
+.contact-form 
 {
-  display: inline-block; /* Allows padding to work */
-  color: var(--bg-color);
+  display: flex;               /* Flexbox layout */
+  flex-direction: column;      /* Stack items vertically */
+  gap: 60px;                   /* Space between input fields */
+  padding: 30px;               /* Inner spacing */
+  border-radius: 10px;         /* Rounded corners */
+  margin: 0 auto;              /* Center the form horizontally */
+  box-sizing: border-box;      /* Prevent layout breaking */
+}
+
+/* Form Group - Each field wrapper */
+.form-group 
+{
+  margin-top: -30px;
+  width: 100%;                 /* Ensure each group takes full width */
+}
+
+/* Input Fields and Text area */
+.form-input 
+{
+  background-color: #cfcccc;
+  width: 70%;                 /* Full width inside container */
+  padding: 12px;               /* Padding for text input */
+  border: none;                /* Remove border */
+  border-radius: 15px;          /* Rounded corners */
+  font-size: 16px;             /* Readable font size */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* Subtle shadow */
+  box-sizing: border-box;      /* Prevent overflow issues */
+}
+
+/* Text area Specific */
+textarea.form-input 
+{
+  height: 120px;               /* Taller for message input */
+  width: 95%;
+  resize: none;                /* Disable manual resizing */
+  margin-bottom: -10%;
+}
+
+/* Submit Button */
+.form-button 
+{
+  color: var(--text-color);               /* White text */
   border: none;
   padding: 12px 15px;
   font-size: 16px;
   cursor: pointer;
   border-radius: 28px;
-  background: linear-gradient(270deg, #3effa5, #40d7f1);
-  text-align: center;
-  text-decoration: none; /* Remove underline */
-  width: 7rem;
+  background: linear-gradient(270deg, #771199, #ec2c99);
+  transition: background-color 0.3s ease, opacity 0.3s ease; /* Added opacity transition */
+  width: 25%;
+  height: 10%;
+}
+
+/* How the button looks when disabled */
+.form-button:disabled 
+{
+  background: #cccccc; /* Make it gray */
+  color: #666666;      /* Darker gray text */
+  cursor: not-allowed; /* Change mouse cursor to a "stop" sign */
+  opacity: 0.6;        /* Make it slightly see-through */
+}
+
+/* Title Styling */
+.form-title 
+{
+  margin-top: -30px;                   /* Remove default margins */
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: -4rem;
+  color: var(--text-color);
+}
+
+.form-text
+{
+  font-size: 1.25rem;
+  margin-bottom: -1rem;
+  color: var(--text-color);
+}
+
+.CaptchaNButton
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.linkedin-icon
+{
+  content: "";
+  width: 33px;
+  height: 33px;
+  position: fixed;
+  left: 19rem;
+  top: 5rem;
+  z-index: 55;
+}
+
+.social-link
+{
+  text-decoration: var(--bg-color) !important;
 }
 
 @media(max-width: 768px)
@@ -219,11 +390,6 @@ button
   .image-bio
   {
     display: none;
-  }
-
-  button
-  {
-    margin-top: -9rem;
   }
 
 }
